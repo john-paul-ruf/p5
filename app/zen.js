@@ -1,10 +1,6 @@
 function setup() {
   this.program = new program();
   this.program.setup();
-
-  function mouseClicked(event) {
-    alert('boom');
-  }
 };
 
 function draw() {
