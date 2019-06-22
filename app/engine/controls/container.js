@@ -1,8 +1,9 @@
 class container extends drawable {
-  constructor() {
+  constructor(owner) {
     super();
     this.drawables = [];
     this.clickables = [];
+    this.owner = owner;
   }
 
   draw() {
@@ -12,9 +13,9 @@ class container extends drawable {
     }
   };
 
-  onClick(event) {
+  onClick() {
     if (this.visible) {
-      _.forEach(this.clickables, c => { c.clicked(event); });
+      _.forEach(this.clickables, c => { c.onClick(); });
     }
   }
 }
