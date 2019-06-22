@@ -3,46 +3,68 @@ class program {
     this.setup = function () {
       createCanvas(500, 500);
 
-      this.button1 = new button();
-      this.button1.textColor = color(128, 128, 128);
-      this.button1.color = color(0, 0, 0);
-      this.button1.borderColor = color(256, 256, 256);
-      this.button1.y = 225;
-      this.button1.x = 50;
-      this.button1.width = 100;
-      this.button1.height = 50;
-      this.button1.text = "B1 - Click Me";
+      this.character = {};
 
+      this.menu = new container();
 
-      this.button2 = new button();
-      this.button2.textColor = color(128, 128, 128);
-      this.button2.color = color(0, 0, 0);
-      this.button2.borderColor = color(256, 256, 256);
-      this.button2.y =225;
-      this.button2.x = 350;
-      this.button2.width = 100;
-      this.button2.height = 50;
-      this.button2.text = "B2 - Click Me";
+      this.menu.color = color(256, 256, 256);
+      this.menu.x = 50;
+      this.menu.y = 50;
+      this.menu.width = 400;
+      this.menu.height = 400;
+      this.menu.borderWidth = 3;
+      this.menu.borderColor = color(0, 256, 0);
+      this.menu.rounding = 10;
 
-      var onClick = function () {
+      this.btnCreateCharacter = new button(this.menu);
+      this.btnCreateCharacter.textColor = color(128, 128, 128);
+      this.btnCreateCharacter.color = color(225, 225, 225);
+      this.btnCreateCharacter.y = 50;
+      this.btnCreateCharacter.x = 100;
+      this.btnCreateCharacter.width = 200;
+      this.btnCreateCharacter.height = 50;
+      this.btnCreateCharacter.text = "Create Character";
+      this.btnCreateCharacter.rounding = 10;
+
+      this.btnPrint = new button(this.menu);
+      this.btnPrint.textColor = color(128, 128, 128);
+      this.btnPrint.color = color(225, 225, 225);
+      this.btnPrint.y =150;
+      this.btnPrint.x = 100;
+      this.btnPrint.width = 200;
+      this.btnPrint.height = 50;
+      this.btnPrint.text = "Print Character to Console";
+      this.btnPrint.rounding = 10;
+
+      this.menu.drawables.push(this.btnCreateCharacter);
+      this.menu.drawables.push(this.btnPrint);
+
+      this.menu.clickables.push(this.btnCreateCharacter);
+      this.menu.clickables.push(this.btnPrint);
+
+      var btnCreateCharacterClick = function () {
         const temp = this.targetItem.color;
         this.targetItem.color = this.targetItem.borderColor;
         this.targetItem.borderColor = temp;
       };
 
-      this.button1.subscribe(onClick);
-      this.button2.subscribe(onClick);
+      this.btnCreateCharacter.subscribe(btnCreateCharacterClick);
+
+      var btnPrint = function () {
+        console.log(this.character);
+      };
+
+      this.btnPrint.subscribe(btnPrint);
     };
 
     this.draw = function () {
-      background(51);
-      this.button2.draw();
-      this.button1.draw();
+      background(225);
+      this.menu.draw();
     };
 
     this.mouseClick = function (event) {
-      this.button1.onClick(event);
-      this.button2.onClick(event);
+      this.menu.onClick();
+      
     };
   }
 }
