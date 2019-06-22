@@ -1,22 +1,21 @@
 class button extends clickable {
   constructor() {
     super();
-    this.x = 150;
-    this.y = 200;
-    this.height = 100;
-    this.width = 200;
-    this.borderWidth = 2;
-    this.textSize = 14;
+    this.x = 0;
+    this.y = 0;
+    this.height = 0;
+    this.width = 0;
+    this.borderWidth =0;
+    this.textSize = 0;
 
-    this.text = 'Click Me';
+    this.text = '';
     this.textColor = undefined;
     this.color = undefined;
     this.borderColor = undefined;
 
 
     this.draw = function () {
-      background(51);
-
+  
       fill(this.color);
       strokeWeight(this.borderWidth);
       stroke(this.borderColor);
