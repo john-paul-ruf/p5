@@ -18,16 +18,17 @@ class button extends clickable {
       background(51);
 
       fill(this.color);
+      strokeWeight(this.borderWidth);
+      stroke(this.borderColor);
       rect(this.x, this.y, this.width, this.height);
-
-      fill(this.borderColor);
-      rect(this.x + this.borderWidth, this.y + this.borderWidth, this.width - this.borderWidth * 2, this.height - this.borderWidth * 2);
+      strokeWeight(0);
+      stroke(0);
 
       fill(this.textColor);
-      text(this.text, this.x, this.y, this.width, this.height);
-
       textSize(this.textSize);
       textAlign(CENTER, CENTER);
+      text(this.text, this.x, this.y, this.width, this.height);
+      
     };
   }
 }

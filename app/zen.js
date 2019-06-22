@@ -7,10 +7,14 @@ function setup() {
   }
 };
 
+function draw() {
+  this.program.draw();
+};
+
 function mouseClicked(event) {
   this.program.mouseClick(event);
 };
 
-function draw() {
-  this.program.draw();
+function touchStarted() {
+  this.program.mouseClick(event);
 };
