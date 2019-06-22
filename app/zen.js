@@ -11,10 +11,6 @@ function draw() {
   this.program.draw();
 };
 
-function mouseClicked(event) {
-  this.program.mouseClick(event);
-};
-
-function touchStarted() {
+function mousePressed(event) {
   this.program.mouseClick(event);
 };

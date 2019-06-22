@@ -7,8 +7,8 @@ class clickable {
     this.width = 100;
 
     this.clicked = function (event) {
-      if (event.offsetX > this.x && event.offsetX < this.x + this.width
-        && event.offsetY > this.y && event.offsetY < this.y + this.height) {
+      if (mouseX > this.x && mouseX < this.x + this.width
+        && mouseY > this.y && mouseY < this.y + this.height) {
         return true;
       }
       return false;
