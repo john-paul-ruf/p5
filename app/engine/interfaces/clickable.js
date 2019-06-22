@@ -12,7 +12,7 @@ class clickable {
         return true;
       }
       return false;
-    }
+    };
 
     this.subscribe = function (fn) {
       this.handlers.push(fn);

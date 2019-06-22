@@ -1,7 +1,7 @@
 class program {
   constructor() {
     this.setup = function () {
-      createCanvas(400, 400);
+      createCanvas(500, 500);
 
       this.clickableButton = new button();
       this.clickableButton.textColor = color(128, 128, 128);
@@ -18,7 +18,6 @@ class program {
     };
 
     this.draw = function () {
-
       this.clickableButton.draw();
     };
 
