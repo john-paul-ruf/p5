@@ -6,6 +6,14 @@ class clickable {
     this.height = 100;
     this.width = 100;
 
+    this.clicked = function (event) {
+      if (event.offsetX > this.x && event.offsetX < this.x + this.width
+        && event.offsetY > this.y && event.offsetY < this.y + this.height) {
+        return true;
+      }
+      return false;
+    }
+
     this.subscribe = function (fn) {
       this.handlers.push(fn);
     };
@@ -23,8 +31,10 @@ class clickable {
     this.onClick = function (event) {
 
       this.handlers.forEach((item) => {
-        event.targetItem = this;
-        item.call(event);
+        if (this.clicked(event)) {
+          event.targetItem = this;
+          item.call(event);
+        }
       });
     };
   }
