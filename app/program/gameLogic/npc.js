@@ -4,5 +4,13 @@ class npc {
     this.DEX = 7;
     this.INT = 7;
     this.HP = 7;
+ 
+    this.weapon = new weapon();
   }
+
+  attack(npc) {
+
+  }
+
+
 };
