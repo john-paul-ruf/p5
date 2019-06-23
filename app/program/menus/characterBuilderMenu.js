@@ -29,7 +29,7 @@ class characterBuilderMenu extends container {
     this.lblPoints.x = 0;
     this.lblPoints.width = 400;
     this.lblPoints.height = 50;
-    this.lblPoints.text = "Distribute 5 points";
+    this.lblPoints.text = `Distribute ${ this.owner.player.availablePoints } points`;
     this.lblPoints.alignment = 'center';
     this.lblPoints.textSize = 21;
 
@@ -37,45 +37,57 @@ class characterBuilderMenu extends container {
     this.lblStr.textColor = color(0, 0, 0);
     this.lblStr.y = 100;
     this.lblStr.x = 50;
-    this.lblStr.width = 75;
+    this.lblStr.width = 100;
     this.lblStr.height = 30;
-    this.lblStr.text = "STR: 7";
+    this.lblStr.text = `STR: ${this.owner.player.STR }`;
     this.lblStr.textSize = 21;
     this.lblStr.alignment = 'right';
+
+    this.plusClick = function () {
+      this.container.owner.player.addPoint(this.attribute);
+      this.container.updateText();
+    };
+
+    this.minusClick = function () {
+      this.container.owner.player.subtractPoint(this.attribute);
+      this.container.updateText();
+    };
 
     this.btnStrPlus = new button(this);
     this.btnStrPlus.textColor = color(0, 0, 0);
     this.btnStrPlus.color = color(225, 225, 225);
     this.btnStrPlus.y = this.lblStr.y ;
-    this.btnStrPlus.x = 135;
+    this.btnStrPlus.x = 155;
     this.btnStrPlus.width = 25;
     this.btnStrPlus.height = 25;
     this.btnStrPlus.text = "+";
     this.btnStrPlus.rounding = 0;
     this.btnStrPlus.borderColor = color(256, 0, 0);
     this.btnStrPlus.borderWidth = 1;
-
+    this.btnStrPlus.subscribe(this.plusClick);
+    this.btnStrPlus.attribute = 'STR';
 
     this.btnStrMinus = new button(this);
     this.btnStrMinus.textColor = color(0, 0, 0);
     this.btnStrMinus.color = color(225, 225, 225);
     this.btnStrMinus.y = this.lblStr.y ;
-    this.btnStrMinus.x = 165;
+    this.btnStrMinus.x = 185;
     this.btnStrMinus.width = 25;
     this.btnStrMinus.height = 25;
     this.btnStrMinus.text = "-";
     this.btnStrMinus.rounding = 0;
     this.btnStrMinus.borderColor = color(0, 0, 256);
     this.btnStrMinus.borderWidth = 1;
-
+    this.btnStrMinus.subscribe(this.minusClick);
+    this.btnStrMinus.attribute = 'STR';
 
     this.lblDex = new label(this);
     this.lblDex.textColor = color(0, 0, 0);
     this.lblDex.y = 125;
     this.lblDex.x = 50;
-    this.lblDex.width = 75;
+    this.lblDex.width = 100;
     this.lblDex.height = 30;
-    this.lblDex.text = "DEX: 7";
+    this.lblDex.text = `DEX: ${this.owner.player.DEX}`;
     this.lblDex.textSize = 21;
     this.lblDex.alignment = 'right';
 
@@ -83,34 +95,37 @@ class characterBuilderMenu extends container {
     this.btnDexPlus.textColor = color(0, 0, 0);
     this.btnDexPlus.color = color(225, 225, 225);
     this.btnDexPlus.y = this.lblDex.y;
-    this.btnDexPlus.x = 135;
+    this.btnDexPlus.x = 155;
     this.btnDexPlus.width = 25;
     this.btnDexPlus.height = 25;
     this.btnDexPlus.text = "+";
     this.btnDexPlus.rounding = 0;
     this.btnDexPlus.borderColor = color(256, 0, 0);
     this.btnDexPlus.borderWidth = 1;
-
+    this.btnDexPlus.subscribe(this.plusClick);
+    this.btnDexPlus.attribute = 'DEX';
 
     this.btnDexMinus = new button(this);
     this.btnDexMinus.textColor = color(0, 0, 0);
     this.btnDexMinus.color = color(225, 225, 225);
     this.btnDexMinus.y = this.lblDex.y;
-    this.btnDexMinus.x = 165;
+    this.btnDexMinus.x = 185;
     this.btnDexMinus.width = 25;
     this.btnDexMinus.height = 25;
     this.btnDexMinus.text = "-";
     this.btnDexMinus.rounding = 0;
     this.btnDexMinus.borderColor = color(0, 0, 256);
     this.btnDexMinus.borderWidth = 1;
+    this.btnDexMinus.subscribe(this.minusClick);
+    this.btnDexMinus.attribute = 'DEX';
 
     this.lblInt = new label(this);
     this.lblInt.textColor = color(0, 0, 0);
     this.lblInt.y = 150;
     this.lblInt.x = 50;
-    this.lblInt.width = 75;
+    this.lblInt.width = 100;
     this.lblInt.height = 30;
-    this.lblInt.text = "INT: 7";
+    this.lblInt.text = `INT: ${this.owner.player.INT}`;
     this.lblInt.textSize = 21;
     this.lblInt.alignment = 'right';
 
@@ -118,34 +133,37 @@ class characterBuilderMenu extends container {
     this.btnIntPlus.textColor = color(0, 0, 0);
     this.btnIntPlus.color = color(225, 225, 225);
     this.btnIntPlus.y = this.lblInt.y;
-    this.btnIntPlus.x = 135;
+    this.btnIntPlus.x = 155;
     this.btnIntPlus.width = 25;
     this.btnIntPlus.height = 25;
     this.btnIntPlus.text = "+";
     this.btnIntPlus.rounding = 0;
     this.btnIntPlus.borderColor = color(256, 0, 0);
     this.btnIntPlus.borderWidth = 1;
-
+    this.btnIntPlus.subscribe(this.plusClick);
+    this.btnIntPlus.attribute = 'INT';
 
     this.btnIntMinus = new button(this);
     this.btnIntMinus.textColor = color(0, 0, 0);
     this.btnIntMinus.color = color(225, 225, 225);
     this.btnIntMinus.y = this.lblInt.y;
-    this.btnIntMinus.x = 165;
+    this.btnIntMinus.x = 185;
     this.btnIntMinus.width = 25;
     this.btnIntMinus.height = 25;
     this.btnIntMinus.text = "-";
     this.btnIntMinus.rounding = 0;
     this.btnIntMinus.borderColor = color(0, 0, 256);
     this.btnIntMinus.borderWidth = 1;
+    this.btnIntMinus.subscribe(this.minusClick);
+    this.btnIntMinus.attribute = 'INT';
 
     this.lblHealth = new label(this);
     this.lblHealth.textColor = color(0, 0, 0);
     this.lblHealth.y = 175;
     this.lblHealth.x = 50;
-    this.lblHealth.width = 75;
+    this.lblHealth.width = 100;
     this.lblHealth.height = 30;
-    this.lblHealth.text = "HP: 7";
+    this.lblHealth.text = `HP: ${this.owner.player.HP}`;
     this.lblHealth.textSize = 21;
     this.lblHealth.alignment = 'right';
 
@@ -153,26 +171,29 @@ class characterBuilderMenu extends container {
     this.btnHealthPlus.textColor = color(0, 0, 0);
     this.btnHealthPlus.color = color(225, 225, 225);
     this.btnHealthPlus.y = this.lblHealth.y ;
-    this.btnHealthPlus.x = 135;
+    this.btnHealthPlus.x = 155;
     this.btnHealthPlus.width = 25;
     this.btnHealthPlus.height = 25;
     this.btnHealthPlus.text = "+";
     this.btnHealthPlus.rounding = 0;
     this.btnHealthPlus.borderColor = color(256, 0, 0);
     this.btnHealthPlus.borderWidth = 1;
-
+    this.btnHealthPlus.subscribe(this.plusClick);
+    this.btnHealthPlus.attribute = 'HP';
 
     this.btnHealthMinus = new button(this);
     this.btnHealthMinus.textColor = color(0, 0, 0);
     this.btnHealthMinus.color = color(225, 225, 225);
     this.btnHealthMinus.y = this.lblHealth.y ;
-    this.btnHealthMinus.x = 165;
+    this.btnHealthMinus.x = 185;
     this.btnHealthMinus.width = 25;
     this.btnHealthMinus.height = 25;
     this.btnHealthMinus.text = "-";
     this.btnHealthMinus.rounding = 0;
     this.btnHealthMinus.borderColor = color(0, 0, 256);
     this.btnHealthMinus.borderWidth = 1;
+    this.btnHealthMinus.subscribe(this.minusClick);
+    this.btnHealthMinus.attribute = 'HP';
 
     this.btnFight = new button(this);
     this.btnFight.textColor = color(0, 0, 0);
@@ -200,6 +221,22 @@ class characterBuilderMenu extends container {
     this.btnBack.borderWidth = 1;
     this.btnBack.dropShadow = true;
 
+    this.backTransition = function () {
+      var that = this;
+      var inAction = function () {
+        if (that.container.y > -400) {
+          that.container.owner.mainMenu.y -= 20;
+          that.container.owner.characterBuilder.y -= 20;
+          that.container.owner.aboutMenu.y -= 20;
+          setTimeout(inAction, 50);
+        }
+      };
+
+      setTimeout(inAction, 50);
+    };
+
+    this.btnBack.subscribe(this.backTransition);
+
     this.drawables.push(this.btnBack);
     this.drawables.push(this.btnFight);
 
@@ -224,20 +261,25 @@ class characterBuilderMenu extends container {
 
     this.clickables.push(this.btnBack);
 
-    this.backTransition = function () {
-      var that = this;
-      var inAction = function () {
-        if (that.container.y > -400) {
-          that.container.owner.mainMenu.y -= 20;
-          that.container.owner.characterBuilder.y -= 20;
-          that.container.owner.aboutMenu.y -= 20;
-          setTimeout(inAction, 50);
-        }
-      };
+    this.clickables.push(this.btnStrPlus);
+    this.clickables.push(this.btnStrMinus);
 
-      setTimeout(inAction, 50);
-    };
+    this.clickables.push(this.btnDexPlus);
+    this.clickables.push(this.btnDexMinus);
 
-    this.btnBack.subscribe(this.backTransition);
+    this.clickables.push(this.btnIntPlus);
+    this.clickables.push(this.btnIntMinus);
+
+    this.clickables.push(this.btnHealthPlus);
+    this.clickables.push(this.btnHealthMinus);
+    
+  }
+
+  updateText() {
+    this.lblPoints.text = `Distribute ${this.owner.player.availablePoints} points`;
+    this.lblStr.text = `STR: ${this.owner.player.STR}`;
+    this.lblDex.text = `DEX: ${this.owner.player.DEX}`;
+    this.lblInt.text = `INT: ${this.owner.player.INT}`;
+    this.lblHealth.text = `HP: ${this.owner.player.HP}`;
   }
 }

@@ -8,7 +8,7 @@ class drawable {
     this.borderWidth = 0;
     this.rounding = 0;
     this.dropShadow = false;
-    this.dropShadowOffset = 7;
+    this.dropShadowOffset = 5;
     this.color = undefined;
     this.borderColor = undefined;
     this.visible = true;
