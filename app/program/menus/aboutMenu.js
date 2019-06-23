@@ -1,10 +1,10 @@
-class characterBuilderMenu extends container {
+class aboutMenu extends container {
   constructor(owner) {
     super(owner);
 
     this.color = color(256, 256, 256);
     this.x = 50;
-    this.y = -400;
+    this.y = 500;
     this.width = 400;
     this.height = 400;
     this.borderWidth = 3;
@@ -28,10 +28,10 @@ class characterBuilderMenu extends container {
     this.backTransition = function () {
       var that = this;
       var inAction = function () {
-        if (that.container.y > -400) {
-          that.container.owner.mainMenu.y -= 20;
-          that.container.owner.characterBuilder.y -= 20;
-          that.container.owner.aboutMenu.y -= 20;
+        if (that.container.y < 500) {
+          that.container.owner.mainMenu.y += 20;
+          that.container.owner.characterBuilder.y += 20;
+          that.container.owner.aboutMenu.y += 20;
           setTimeout(inAction, 50);
         }
       };
@@ -40,5 +40,7 @@ class characterBuilderMenu extends container {
     };
 
     this.btnBack.subscribe(this.backTransition);
+
+    
   }
 }

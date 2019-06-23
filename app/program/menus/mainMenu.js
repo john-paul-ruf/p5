@@ -21,56 +21,53 @@ class mainMenu extends container {
     this.btnCreateCharacter.text = "Create Character";
     this.btnCreateCharacter.rounding = 10;
 
-    this.btnPrint = new button(this);
-    this.btnPrint.textColor = color(128, 128, 128);
-    this.btnPrint.color = color(225, 225, 225);
-    this.btnPrint.y = 175;
-    this.btnPrint.x = 100;
-    this.btnPrint.width = 200;
-    this.btnPrint.height = 50;
-    this.btnPrint.text = "Print Character to Console";
-    this.btnPrint.rounding = 10;
+    this.btnAbout = new button(this);
+    this.btnAbout.textColor = color(128, 128, 128);
+    this.btnAbout.color = color(225, 225, 225);
+    this.btnAbout.y = 175;
+    this.btnAbout.x = 100;
+    this.btnAbout.width = 200;
+    this.btnAbout.height = 50;
+    this.btnAbout.text = "About";
+    this.btnAbout.rounding = 10;
 
     this.drawables.push(this.btnCreateCharacter);
-    this.drawables.push(this.btnPrint);
+    this.drawables.push(this.btnAbout);
 
     this.clickables.push(this.btnCreateCharacter);
-    this.clickables.push(this.btnPrint);
+    this.clickables.push(this.btnAbout);
 
-    this.transitionedToCharacterBuilder = false;
-
-    this.transition = function () {
+    this.characterTransition = function () {
       var that = this;
       var inAction = function () {
         if (that.container.y < 510) {
           that.container.y += 20;
+          that.container.owner.characterBuilder.y += 20;
+          that.container.owner.aboutMenu.y += 20;
           setTimeout(inAction, 50);
-        } else {
-          that.container.transitionedToCharacterBuilder = true;
+        } 
+      };
+
+      setTimeout(inAction, 50);
+    };
+
+    this.btnCreateCharacter.subscribe(this.characterTransition);
+
+    this.aboutTransition = function () {
+      var that = this;
+      var inAction = function () {
+        if (that.container.y > -400) {
+          that.container.y -= 20;
+          that.container.owner.characterBuilder.y -= 20;
+          that.container.owner.aboutMenu.y -= 20;
+          setTimeout(inAction, 50);
         }
       };
 
       setTimeout(inAction, 50);
     };
 
-    this.btnCreateCharacter.subscribe(this.transition);
 
-    this.logCharacter = function () {
-      console.log(this.container.owner.character);
-    };
-
-    this.btnPrint.subscribe(this.logCharacter);
-  }
-
-  draw() {
-    if (this.visible) {
-      super.draw();
-    }
-  };
-
-  onClick() {
-    if (this.visible) {
-      super.onClick();
-    }
+    this.btnAbout.subscribe(this.aboutTransition);
   }
 }
