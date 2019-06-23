@@ -10,6 +10,7 @@ class mainMenu extends container {
     this.borderWidth = 3;
     this.borderColor = color(0, 256, 0);
     this.rounding = 10;
+    this.dropShadow = true;
 
     this.lblHeader = new label(this);
     this.lblHeader.textColor = color(0, 0, 0);
@@ -32,6 +33,7 @@ class mainMenu extends container {
     this.btnCreateCharacter.rounding = 10;
     this.btnCreateCharacter.borderColor = color(0, 256, 0);
     this.btnCreateCharacter.borderWidth = 1;
+    this.btnCreateCharacter.dropShadow = true;
 
     this.btnAbout = new button(this);
     this.btnAbout.textColor = color(0, 0, 0);
@@ -44,6 +46,7 @@ class mainMenu extends container {
     this.btnAbout.rounding = 10;
     this.btnAbout.borderColor = color(0, 256, 0);
     this.btnAbout.borderWidth = 1;
+    this.btnAbout.dropShadow = true;
 
     this.drawables.push(this.lblHeader);
     this.drawables.push(this.btnCreateCharacter);

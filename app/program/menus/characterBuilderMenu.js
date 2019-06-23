@@ -11,6 +11,7 @@ class characterBuilderMenu extends container {
     this.borderColor = color(0, 256, 0);
     this.rounding = 10;
     this.visible = true;
+    this.dropShadow = true;
 
     this.lblHeader = new label(this);
     this.lblHeader.textColor = color(0, 0, 0);
@@ -184,6 +185,7 @@ class characterBuilderMenu extends container {
     this.btnFight.rounding = 10;
     this.btnFight.borderColor = color(0, 256, 0);
     this.btnFight.borderWidth = 1;
+    this.btnFight.dropShadow = true;
 
     this.btnBack = new button(this);
     this.btnBack.textColor = color(0, 0, 0);
@@ -196,6 +198,7 @@ class characterBuilderMenu extends container {
     this.btnBack.rounding = 10;
     this.btnBack.borderColor = color(0, 256, 0);
     this.btnBack.borderWidth = 1;
+    this.btnBack.dropShadow = true;
 
     this.drawables.push(this.btnBack);
     this.drawables.push(this.btnFight);

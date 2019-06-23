@@ -11,6 +11,7 @@ class aboutMenu extends container {
     this.borderColor = color(0, 256, 0);
     this.rounding = 10;
     this.visible = true;
+    this.dropShadow = true;
 
     this.lblHeader = new label(this);
     this.lblHeader.textColor = color(0, 0, 0);
@@ -53,6 +54,7 @@ class aboutMenu extends container {
     this.btnBack.rounding = 10;
     this.btnBack.borderColor = color(0, 256, 0);
     this.btnBack.borderWidth = 1;
+    this.btnBack.dropShadow = true;
 
     this.drawables.push(this.lblHeader);
     this.drawables.push(this.lbl1);

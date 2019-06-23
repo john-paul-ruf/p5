@@ -3,7 +3,7 @@ class program {
     this.setup = function () {
       createCanvas(500, 500);
 
-      this.character = {};
+      this.player = new player();
 
       this.mainMenu = new mainMenu(this);
       this.characterBuilder = new characterBuilderMenu(this);

@@ -8,6 +8,7 @@ class drawable {
     this.borderWidth = 0;
     this.rounding = 0;
     this.dropShadow = false;
+    this.dropShadowOffset = 7;
     this.color = undefined;
     this.borderColor = undefined;
     this.visible = true;
@@ -15,13 +16,22 @@ class drawable {
 
   draw() {
     if (this.visible) {
+
+      if (this.dropShadow) {
+        fill(color(0, 0, 0, 128));
+        rect(this.relativeX + this.dropShadowOffset, this.relativeY + this.dropShadowOffset, this.width, this.height, this.rounding);
+      }
+
       fill(this.color);
+
       strokeWeight(this.borderWidth);
       if (this.borderColor) {
         stroke(this.borderColor);
       }
+
       rect(this.relativeX, this.relativeY, this.width, this.height, this.rounding);
       strokeWeight(0);
+
     }
   }
 
