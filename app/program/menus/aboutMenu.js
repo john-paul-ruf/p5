@@ -41,7 +41,7 @@ class aboutMenu extends container {
 
 
     this.btnBack = new button(this);
-    this.btnBack.textColor = color(128, 128, 128);
+    this.btnBack.textColor = color(0, 0, 0);
     this.btnBack.color = color(225, 225, 225);
     this.btnBack.y = 300;
     this.btnBack.x = 100;
@@ -49,6 +49,8 @@ class aboutMenu extends container {
     this.btnBack.height = 50;
     this.btnBack.text = "Back to Main";
     this.btnBack.rounding = 10;
+    this.btnBack.borderColor = color(0, 256, 0);
+    this.btnBack.borderWidth = 1;
 
     this.drawables.push(this.lblHeader);
     this.drawables.push(this.lbl1);

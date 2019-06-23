@@ -21,7 +21,7 @@ class mainMenu extends container {
     this.lblHeader.textSize = 21;
 
     this.btnCreateCharacter = new button(this);
-    this.btnCreateCharacter.textColor = color(128, 128, 128);
+    this.btnCreateCharacter.textColor = color(0, 0, 0);
     this.btnCreateCharacter.color = color(225, 225, 225);
     this.btnCreateCharacter.y = 100;
     this.btnCreateCharacter.x = 100;
@@ -29,9 +29,11 @@ class mainMenu extends container {
     this.btnCreateCharacter.height = 50;
     this.btnCreateCharacter.text = "Create Character";
     this.btnCreateCharacter.rounding = 10;
+    this.btnCreateCharacter.borderColor = color(0, 256, 0);
+    this.btnCreateCharacter.borderWidth = 1;
 
     this.btnAbout = new button(this);
-    this.btnAbout.textColor = color(128, 128, 128);
+    this.btnAbout.textColor = color(0, 0, 0);
     this.btnAbout.color = color(225, 225, 225);
     this.btnAbout.y = 175;
     this.btnAbout.x = 100;
@@ -39,6 +41,8 @@ class mainMenu extends container {
     this.btnAbout.height = 50;
     this.btnAbout.text = "About";
     this.btnAbout.rounding = 10;
+    this.btnAbout.borderColor = color(0, 256, 0);
+    this.btnAbout.borderWidth = 1;
 
     this.drawables.push(this.lblHeader);
     this.drawables.push(this.btnCreateCharacter);
