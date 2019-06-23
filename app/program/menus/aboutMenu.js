@@ -12,6 +12,34 @@ class aboutMenu extends container {
     this.rounding = 10;
     this.visible = true;
 
+    this.lblHeader = new label(this);
+    this.lblHeader.textColor = color(0, 0, 0);
+    this.lblHeader.y = 20;
+    this.lblHeader.x = 0;
+    this.lblHeader.width = 400;
+    this.lblHeader.height = 50;
+    this.lblHeader.text = "About";
+    this.lblHeader.textSize = 21;
+
+    this.lbl1 = new label(this);
+    this.lbl1.textColor = color(0, 0, 0);
+    this.lbl1.y = 80;
+    this.lbl1.x = 0;
+    this.lbl1.width = 400;
+    this.lbl1.height = 50;
+    this.lbl1.text = "Created by John Ruf";
+    this.lbl1.textSize = 16;
+
+    this.lbl2 = new label(this);
+    this.lbl2.textColor = color(0, 0, 0);
+    this.lbl2.y = 140;
+    this.lbl2.x = 0;
+    this.lbl2.width = 400;
+    this.lbl2.height = 50;
+    this.lbl2.text = "https://github.com/john-paul-ruf/p5";
+    this.lbl2.textSize = 18;
+
+
     this.btnBack = new button(this);
     this.btnBack.textColor = color(128, 128, 128);
     this.btnBack.color = color(225, 225, 225);
@@ -22,6 +50,9 @@ class aboutMenu extends container {
     this.btnBack.text = "Back to Main";
     this.btnBack.rounding = 10;
 
+    this.drawables.push(this.lblHeader);
+    this.drawables.push(this.lbl1);
+    this.drawables.push(this.lbl2);
     this.drawables.push(this.btnBack);
     this.clickables.push(this.btnBack);
 

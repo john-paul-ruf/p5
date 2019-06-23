@@ -11,6 +11,15 @@ class mainMenu extends container {
     this.borderColor = color(0, 256, 0);
     this.rounding = 10;
 
+    this.lblHeader = new label(this);
+    this.lblHeader.textColor = color(0, 0, 0);
+    this.lblHeader.y = 20;
+    this.lblHeader.x = 0;
+    this.lblHeader.width = 400;
+    this.lblHeader.height = 50;
+    this.lblHeader.text = "p5.js - Arena RPG Template";
+    this.lblHeader.textSize = 21;
+
     this.btnCreateCharacter = new button(this);
     this.btnCreateCharacter.textColor = color(128, 128, 128);
     this.btnCreateCharacter.color = color(225, 225, 225);
@@ -31,6 +40,7 @@ class mainMenu extends container {
     this.btnAbout.text = "About";
     this.btnAbout.rounding = 10;
 
+    this.drawables.push(this.lblHeader);
     this.drawables.push(this.btnCreateCharacter);
     this.drawables.push(this.btnAbout);
 
