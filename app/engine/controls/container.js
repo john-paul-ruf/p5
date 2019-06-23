@@ -18,4 +18,21 @@ class container extends drawable {
       _.forEach(this.clickables, c => { c.onClick(); });
     }
   }
+
+  get relativeX() {
+
+    if (this.owner instanceof container) {
+      return this.owner.x + this.x;
+    }
+
+    return this.x;
+  }
+
+  get relativeY() {
+    if (this.owner instanceof container) {
+      return this.owner.y + this.y;
+    }
+
+    return this.y;
+  }
 }

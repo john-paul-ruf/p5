@@ -36,10 +36,10 @@ class drawable {
   }
 
   get relativeX() {
-    return this.container ? this.container.x + this.x : this.x;
+    return this.container ? this.container.relativeX + this.x : this.x;
   }
 
   get relativeY() {
-    return this.container ? this.container.y + this.y : this.y;
+    return this.container ? this.container.relativeY + this.y : this.y;
   }
 };
