@@ -9,4 +9,5 @@ function draw() {
 
 function mousePressed(event) {
   this.program.mouseClick(event);
+  return false;
 };
