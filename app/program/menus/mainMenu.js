@@ -46,7 +46,7 @@ class mainMenu extends container {
           that.container.y += 20;
           setTimeout(inAction, 50);
         } else {
-          that.transitionedToCharacterBuilder = true;
+          that.container.transitionedToCharacterBuilder = true;
         }
       };
 
