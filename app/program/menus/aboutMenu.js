@@ -19,7 +19,8 @@ class aboutMenu extends container {
     this.lblHeader.width = 400;
     this.lblHeader.height = 50;
     this.lblHeader.text = "About";
-    this.lblHeader.textSize = 21;
+    this.lblHeader.textSize = 26;
+    this.lblHeader.alignment = 'center';
 
     this.lbl1 = new label(this);
     this.lbl1.textColor = color(0, 0, 0);
@@ -29,6 +30,7 @@ class aboutMenu extends container {
     this.lbl1.height = 50;
     this.lbl1.text = "Created by John Ruf";
     this.lbl1.textSize = 16;
+    this.lbl1.alignment = 'center';
 
     this.lbl2 = new label(this);
     this.lbl2.textColor = color(0, 0, 0);
@@ -38,7 +40,7 @@ class aboutMenu extends container {
     this.lbl2.height = 50;
     this.lbl2.text = "https://github.com/john-paul-ruf/p5";
     this.lbl2.textSize = 18;
-
+    this.lbl2.alignment = 'center';
 
     this.btnBack = new button(this);
     this.btnBack.textColor = color(0, 0, 0);

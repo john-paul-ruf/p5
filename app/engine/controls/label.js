@@ -8,7 +8,7 @@ class label extends drawable{
     this.textColor = undefined;
 
     this.container = container;
-
+    this.alignment = 'left';
   }
 
   draw() {
@@ -17,7 +17,18 @@ class label extends drawable{
         fill(this.textColor);
       }
       textSize(this.textSize);
-      textAlign(CENTER, CENTER);
+
+      switch (this.alignment.toLocaleLowerCase()) {
+        case 'left':
+          textAlign(LEFT, CENTER);
+          break;
+        case 'right':
+          textAlign(RIGHT, CENTER);
+          break;
+        case 'center':
+          textAlign(CENTER, CENTER);
+          break;
+      }
 
       text(this.text, this.relativeX, this.relativeY, this.width, this.height);
     }

@@ -18,7 +18,8 @@ class mainMenu extends container {
     this.lblHeader.width = 400;
     this.lblHeader.height = 50;
     this.lblHeader.text = "p5.js - Arena RPG Template";
-    this.lblHeader.textSize = 21;
+    this.lblHeader.textSize = 26;
+    this.lblHeader.alignment = 'center';
 
     this.btnCreateCharacter = new button(this);
     this.btnCreateCharacter.textColor = color(0, 0, 0);
