@@ -1,11 +1,10 @@
 class lootGenerator {
   constructor() {
-  
   }
 
   static generateWeapon() {
 
-    const d20 = new dice().max = 20;
+    const d20 = new dice(20);
 
     var enhanceWeapon = new function (weapon, modificationArray) {
       _.forEach(modificationArray, m => {
@@ -77,17 +76,17 @@ class lootGenerator {
       case 17:
         enhanceWeapon(weapon, [weaponModification.generateWeaponModification()]);
         break;
-  
+
       case 18:
       case 19:
         enhanceWeapon(weapon, [weaponModification.generateWeaponModification(),
-          weaponModification.generateWeaponModification()]);
+        weaponModification.generateWeaponModification()]);
         break;
-   
+
       case 20:
         enhanceWeapon(weapon, [weaponModification.generateWeaponModification(),
-          weaponModification.generateWeaponModification(),
-          weaponModification.generateWeaponModification()]);
+        weaponModification.generateWeaponModification(),
+        weaponModification.generateWeaponModification()]);
         break;
     }
 

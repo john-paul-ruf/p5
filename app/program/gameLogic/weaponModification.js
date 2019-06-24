@@ -5,7 +5,7 @@ class weaponModification {
   }
 
   static generateWeaponModification() {
-    const d3 = new dice().max = 3;
+    const d3 = new dice(3);
 
     const modification = new weaponModification();
     modification.bonus = d3.roll();

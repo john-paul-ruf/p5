@@ -11,7 +11,7 @@ class npc {
   attack(npc) {
 
     const getDamage = new function (statValue, npc) {
-      const d20 = new dice().max = 20;
+      const d20 = new dice(20);
       let damage = 0;
       const hitRoll = d20.roll();
       if (hitRoll + statValue / 2 > npc.DEX) {

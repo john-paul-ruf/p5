@@ -1,6 +1,6 @@
 class dice {
-  constructor() {
-    this.max = 20;
+  constructor(max) {
+    this.max = max;
   }
 
   roll() {

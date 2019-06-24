@@ -8,6 +8,7 @@ class program {
       this.mainMenu = new mainMenu(this);
       this.characterBuilder = new characterBuilderMenu(this);
       this.aboutMenu = new aboutMenu(this);
+      this.figherMenu = new fightMenu(this);
       
     };
 
@@ -17,12 +18,14 @@ class program {
       this.mainMenu.draw();
       this.characterBuilder.draw();
       this.aboutMenu.draw();
+      this.figherMenu.draw();
     };
 
     this.mouseClick = function () {
       this.mainMenu.onClick();
       this.characterBuilder.onClick();
       this.aboutMenu.onClick();
+      this.figherMenu.onClick();
     };
   }
 }
