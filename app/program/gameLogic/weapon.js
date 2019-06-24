@@ -1,8 +1,9 @@
 class weapon {
-  constructor() {
-    this.name = 'Basic Attack';
-    this.minDamage = 1;
-    this.maxDamage = 2;
-    this.modification = [];
+  constructor(name, min, max, stat) {
+    this.name = name;
+    this.minDamage = min;
+    this.maxDamage = max;
+    this.stat = stat;
+    this.modifications = [];
   }
 };
