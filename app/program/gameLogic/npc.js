@@ -7,10 +7,4 @@ class npc {
  
     this.weapon = new weapon();
   }
-
-  attack(npc) {
-
-  }
-
-
 };

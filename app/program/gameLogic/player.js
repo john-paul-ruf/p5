@@ -2,11 +2,12 @@ class player extends npc {
   constructor() {
     super();
     this.availablePoints = 5;
+    this.fightsSurvived = 0;
+    this.level = Math.floor(this.fightsSurvived / 3);
   }
 
   addPoint(attribute) {
     if (this.availablePoints > 0) {
-
       switch (attribute.toUpperCase()) {
         case 'STR':
           this.STR++;
