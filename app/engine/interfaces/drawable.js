@@ -1,6 +1,6 @@
 class drawable {
   constructor() {
-    this.handlers = [];
+    this.mouseOverhandlers = [];
     this.x = 0;
     this.y = 0;
     this.height = 100;
@@ -32,6 +32,7 @@ class drawable {
       rect(this.relativeX, this.relativeY, this.width, this.height, this.rounding);
       strokeWeight(0);
 
+      this.onMouseOver();
     }
   }
 
@@ -42,4 +43,35 @@ class drawable {
   get relativeY() {
     return this.container ? this.container.relativeY + this.y : this.y;
   }
+
+  mouseOver() {
+    if (mouseX > this.relativeX && mouseX < this.relativeX + this.width
+      && mouseY > this.relativeY && mouseY < this.relativeY + this.height) {
+      return true;
+    }
+    return false;
+  };
+
+  subscribeMouseOver(fn) {
+    this.mouseOverhandlers.push(fn);
+  };
+
+  unsubscribeMouseOver(fn) {
+    this.mouseOverhandlers = this.handlers.filter(
+      function (item) {
+        if (item !== fn) {
+          return item;
+        }
+      }
+    );
+  };
+
+  onMouseOver() {
+
+    this.mouseOverhandlers.forEach((item) => {
+      if (this.mouseOver()) {
+        item.call(this);
+      }
+    });
+  };
 };

@@ -1,10 +1,10 @@
 class clickable extends drawable {
   constructor() {
     super();
-    this.handlers = [];
+    this.clickHandlers = [];
   }
 
-  clicked(event) {
+  clicked() {
     if (mouseX > this.relativeX && mouseX < this.relativeX + this.width
       && mouseY > this.relativeY && mouseY < this.relativeY + this.height) {
       return true;
@@ -13,11 +13,11 @@ class clickable extends drawable {
   };
 
   subscribe(fn) {
-    this.handlers.push(fn);
+    this.clickHandlers.push(fn);
   };
 
   unsubscribe(fn) {
-    this.handlers = this.handlers.filter(
+    this.clickHandlers = this.handlers.filter(
       function (item) {
         if (item !== fn) {
           return item;
@@ -28,7 +28,7 @@ class clickable extends drawable {
 
   onClick() {
 
-    this.handlers.forEach((item) => {
+    this.clickHandlers.forEach((item) => {
       if (this.clicked()) {
         item.call(this);
       }

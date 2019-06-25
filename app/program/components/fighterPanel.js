@@ -15,6 +15,9 @@ class fighterPanel extends container {
     this.dropShadow = false;
 
     this.npc = npc;
+    this.attributes = new miniAttributes(this, this.target);
+    this.attributes.init();
+    this.attributes.visible = false;
 
     this.portrait = new button(this);
     this.portrait.textColor = color(0, 0, 0);
@@ -28,6 +31,10 @@ class fighterPanel extends container {
     this.portrait.borderColor = color(0, 0, 0);
     this.portrait.borderWidth = 1;
     this.portrait.dropShadow = false;
+
+    this.portrait.subscribeMouseOver(() => {
+      this.attributes.visible = true;
+    });
 
     this.health = new progressBar(this, this.target.HP);
     this.health.color = color(128, 128, 128);
@@ -54,6 +61,7 @@ class fighterPanel extends container {
     this.drawables.push(this.portrait);
     this.drawables.push(this.health);
     this.drawables.push(this.weapon);
+    this.drawables.push(this.attributes);
   }
 
 }

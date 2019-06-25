@@ -5,6 +5,11 @@ class fightMenu extends container {
 
   init() {
 
+    this.enemy = new villain(this.owner.player.level);
+    this.enemy.init();
+
+    this.player = this.owner.player;
+
     this.x = 50;
     this.y = -875;
     this.color = color(256, 256, 256);
@@ -15,13 +20,11 @@ class fightMenu extends container {
     this.rounding = 10;
     this.visible = true;
     this.dropShadow = true;
+    this.showPlayerPanelMouseOver = false;
 
-    this.playerPanel = new fighterPanel(this, this.owner.player);
+    this.playerPanel = new fighterPanel(this, this.player);
     this.playerPanel.init();
-
-
-    this.enemy = new villain();
-    this.enemy.init();
+ 
     this.villainPanel = new fighterPanel(this, this.enemy);
     this.villainPanel.init();
 
@@ -31,10 +34,33 @@ class fightMenu extends container {
     this.villainPanel.x = 200;
     this.villainPanel.y = 50;
 
+
+    this.btnAttack = new button(this);
+    this.btnAttack.textColor = color(0, 0, 0);
+    this.btnAttack.color = color(225, 225, 225);
+    this.btnAttack.y = 250;
+    this.btnAttack.x = 100;
+    this.btnAttack.width = 200;
+    this.btnAttack.height = 50;
+    this.btnAttack.text = "Attack!";
+    this.btnAttack.rounding = 10;
+    this.btnAttack.borderColor = color(256, 0, 0);
+    this.btnAttack.borderWidth = 1;
+    this.btnAttack.dropShadow = true;
+
+    this.attack = function () {
+      this.container.player.attack(this.container.enemy);
+      this.container.enemy.attack(this.container.player);
+     
+    };
+
+    this.btnAttack.subscribe(this.attack);
+
+
     this.btnBack = new button(this);
     this.btnBack.textColor = color(0, 0, 0);
     this.btnBack.color = color(225, 225, 225);
-    this.btnBack.y = 300;
+    this.btnBack.y = 325;
     this.btnBack.x = 100;
     this.btnBack.width = 200;
     this.btnBack.height = 50;
@@ -61,10 +87,25 @@ class fightMenu extends container {
 
     this.btnBack.subscribe(this.backTransition);
 
+    this.drawables.push(this.btnAttack);
     this.drawables.push(this.btnBack);
     this.drawables.push(this.playerPanel);
     this.drawables.push(this.villainPanel);
 
+    if (this.showPlayerPanelMouseOver) {
+      this.drawables.push(this.characterAttributes);
+    }
+
     this.clickables.push(this.btnBack);
+    this.clickables.push(this.btnAttack);
   }
+
+  draw() {
+    if (this.visible) {
+      super.draw();
+      this.playerPanel.health.current = this.player.currentHP;
+      this.villainPanel.health.current = this.enemy.currentHP;
+    }
+  }
+  
 }

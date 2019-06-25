@@ -22,7 +22,7 @@ class container extends drawable {
   get relativeX() {
 
     if (this.owner instanceof container) {
-      return this.owner.x + this.x;
+      return this.owner.relativeX + this.x;
     }
 
     return this.x;
@@ -30,7 +30,7 @@ class container extends drawable {
 
   get relativeY() {
     if (this.owner instanceof container) {
-      return this.owner.y + this.y;
+      return this.owner.relativeY + this.y;
     }
 
     return this.y;

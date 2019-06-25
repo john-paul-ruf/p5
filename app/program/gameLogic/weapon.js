@@ -8,8 +8,8 @@ class weapon {
   }
 
   getDamage() {
-    const dice = new dice().max = max;
-    const dmgRoll = dice.roll();
+    const die = new dice(this.maxDamage);
+    const dmgRoll = die.roll();
     return dmgRoll < min ? min : dmgRoll;
   }
 };

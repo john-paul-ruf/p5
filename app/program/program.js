@@ -4,7 +4,7 @@ class program {
   }
 
   setup() {
-    createCanvas(500, 500);
+    this.canvas = createCanvas(500, 500);
   }
 
   draw() {

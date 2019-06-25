@@ -2,28 +2,28 @@ class lootGenerator {
   constructor() {
   }
 
+  static enhanceWeapon(weapon, modificationArray) {
+    _.forEach(modificationArray, m => {
+      switch (m.stat) {
+        case 'STR':
+          'Sharp '.concat(weapon.name);
+          weapon.modifications.push(m);
+          break;
+        case 'DEX':
+          'Swift '.concat(weapon.name);
+          weapon.modifications.push(m);
+          break;
+        case 'INT':
+          'Shiny '.concat(weapon.name);
+          weapon.modifications.push(m);
+          break;
+      }
+    });
+  };
+
   static generateWeapon() {
 
     const d20 = new dice(20);
-
-    const enhanceWeapon = new function (weapon, modificationArray) {
-      _.forEach(modificationArray, m => {
-        switch (m.stat) {
-          case 'STR':
-            'Sharp '.concat(weapon.name);
-            weapon.modifications.push(m);
-            break;
-          case 'DEX':
-            'Swift '.concat(weapon.name);
-            weapon.modifications.push(m);
-            break;
-          case 'INT':
-            'Shiny '.concat(weapon.name);
-            weapon.modifications.push(m);
-            break;
-        }
-      });
-    };
 
     let returnWeapon;
 
@@ -74,17 +74,17 @@ class lootGenerator {
       case 15:
       case 16:
       case 17:
-        enhanceWeapon(returnWeapon, [weaponModification.generateWeaponModification()]);
+        lootGenerator.enhanceWeapon(returnWeapon, [weaponModification.generateWeaponModification()]);
         break;
 
       case 18:
       case 19:
-        enhanceWeapon(returnWeapon, [weaponModification.generateWeaponModification(),
+        lootGenerator.enhanceWeapon(returnWeapon, [weaponModification.generateWeaponModification(),
         weaponModification.generateWeaponModification()]);
         break;
 
       case 20:
-        enhanceWeapon(returnWeapon, [weaponModification.generateWeaponModification(),
+        lootGenerator.enhanceWeapon(returnWeapon, [weaponModification.generateWeaponModification(),
         weaponModification.generateWeaponModification(),
         weaponModification.generateWeaponModification()]);
         break;
