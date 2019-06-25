@@ -7,7 +7,7 @@ class player extends npc {
   }
 
   init() {
-    this.weapon = new weapon('Basic', 0, 2, 'ANY');
+    this.weapon = lootGenerator.generateWeapon();
   }
 
   addPoint(attribute) {
