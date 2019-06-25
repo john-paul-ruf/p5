@@ -55,7 +55,7 @@ class fighterPanel extends container {
     this.weapon.width = 125;
     this.weapon.height = 30;
     this.weapon.text = this.target.weapon.name;
-    this.weapon.textSize = 16;
+    this.weapon.textSize = 12;
     this.weapon.alignment = 'left';
 
     this.drawables.push(this.portrait);

@@ -6,15 +6,15 @@ class lootGenerator {
     _.forEach(modificationArray, m => {
       switch (m.stat) {
         case 'STR':
-          'Sharp '.concat(weapon.name);
+          weapon.name = 'Sharp '.concat(weapon.name);
           weapon.modifications.push(m);
           break;
         case 'DEX':
-          'Swift '.concat(weapon.name);
+          weapon.name = 'Swift '.concat(weapon.name);
           weapon.modifications.push(m);
           break;
         case 'INT':
-          'Shiny '.concat(weapon.name);
+          weapon.name = 'Shiny '.concat(weapon.name);
           weapon.modifications.push(m);
           break;
       }
