@@ -5,7 +5,7 @@ class npc {
     this.INT = 7;
     this.HP = 7;
  
-    this.weapon = new weapon();
+    this.weapon = undefined;
   }
 
   attack(npc) {

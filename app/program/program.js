@@ -1,31 +1,43 @@
 class program {
   constructor() {
-    this.setup = function () {
-      createCanvas(500, 500);
 
-      this.player = new player();
+  }
 
-      this.mainMenu = new mainMenu(this);
-      this.characterBuilder = new characterBuilderMenu(this);
-      this.aboutMenu = new aboutMenu(this);
-      this.figherMenu = new fightMenu(this);
-      
-    };
+  setup() {
+    createCanvas(500, 500);
+  }
 
-    this.draw = function () {
-      background(225);
+  draw() {
+    background(225);
 
-      this.mainMenu.draw();
-      this.characterBuilder.draw();
-      this.aboutMenu.draw();
-      this.figherMenu.draw();
-    };
+    this.mainMenu.draw();
+    this.characterBuilder.draw();
+    this.aboutMenu.draw();
+    this.fightMenu.draw();
+  }
 
-    this.mouseClick = function () {
-      this.mainMenu.onClick();
-      this.characterBuilder.onClick();
-      this.aboutMenu.onClick();
-      this.figherMenu.onClick();
-    };
+  mouseClick() {
+    this.mainMenu.onClick();
+    this.characterBuilder.onClick();
+    this.aboutMenu.onClick();
+    this.fightMenu.onClick();
+  }
+
+  init() {
+    this.player = new player();
+    this.player.init();
+
+    this.mainMenu = new mainMenu(this);
+    this.mainMenu.init();
+
+    this.characterBuilder = new characterBuilderMenu(this);
+    this.characterBuilder.init();
+
+    this.aboutMenu = new aboutMenu(this);
+    this.aboutMenu.init();
+
+    this.fightMenu = new fightMenu(this);
+    this.fightMenu.init();
+
   }
 }

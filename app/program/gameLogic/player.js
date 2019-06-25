@@ -4,6 +4,9 @@ class player extends npc {
     this.availablePoints = 5;
     this.fightsSurvived = 0;
     this.level = Math.floor(this.fightsSurvived / 3);
+  }
+
+  init() {
     this.weapon = new weapon('Basic', 0, 2, 'ANY');
   }
 

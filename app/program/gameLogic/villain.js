@@ -2,12 +2,15 @@ class villain extends player {
   constructor(level) {
     super();
     this.availablePoints = 5 + level;
+  }
+
+  init() {
     this.weapon = lootGenerator.generateWeapon();
 
-    const dice = new dice(4);
+    const die = new dice(4);
     var randoAssignPoints = new function () {
       if (this.availablePoints > 0) {
-        switch (dice.roll()) {
+        switch (die.roll()) {
           case 1:
             this.addPoint('STR');
             break;

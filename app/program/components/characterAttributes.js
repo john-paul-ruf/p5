@@ -1,7 +1,10 @@
 class characterAttributes extends container {
   constructor(owner, player) {
     super(owner);
+    this.player = player;
+  }
 
+  init() {
     this.color = color(256, 256, 256);
     this.x = 50;
     this.y = 50;
@@ -11,8 +14,6 @@ class characterAttributes extends container {
     this.rounding = 0;
     this.visible = true;
     this.dropShadow = false;
-
-    this.player = player;
 
     this.lblPoints = new label(this);
     this.lblPoints.textColor = color(0, 0, 0);
@@ -217,7 +218,6 @@ class characterAttributes extends container {
     this.clickables.push(this.btnHealthMinus);
 
   }
-
   updateText() {
     this.lblPoints.text = `Distribute ${this.player.availablePoints} points`;
     this.lblStr.text = `STR: ${this.player.STR}`;

@@ -1,9 +1,12 @@
 class fightMenu extends container {
   constructor(owner) {
     super(owner);
+  }
+
+  init() {
 
     this.x = 50;
-    this.y = -800;
+    this.y = -875;
     this.color = color(256, 256, 256);
     this.width = 400;
     this.height = 400;
@@ -13,14 +16,20 @@ class fightMenu extends container {
     this.visible = true;
     this.dropShadow = true;
 
-    this.playerPanel = new fighterPanel(this, owner.player);
-    //this.villainPanel = new fighterPanel(this, new villain(owner.player.level));
+    this.playerPanel = new fighterPanel(this, this.owner.player);
+    this.playerPanel.init();
+
+
+    this.enemy = new villain();
+    this.enemy.init();
+    this.villainPanel = new fighterPanel(this, this.enemy);
+    this.villainPanel.init();
 
     this.playerPanel.x = 50;
     this.playerPanel.y = 50;
 
-    //this.villainPanel.x = 200;
-    //this.villainPanel.y = 50;
+    this.villainPanel.x = 200;
+    this.villainPanel.y = 50;
 
     this.btnBack = new button(this);
     this.btnBack.textColor = color(0, 0, 0);
@@ -38,10 +47,11 @@ class fightMenu extends container {
     this.backTransition = function () {
       var that = this;
       var inAction = function () {
-        if (that.container.y < 500) {
-          that.container.owner.mainMenu.y += 20;
-          that.container.owner.characterBuilder.y += 20;
-          that.container.owner.aboutMenu.y += 20;
+        if (that.container.y > -400) {
+          that.container.owner.characterBuilder.y -= 20;
+          that.container.owner.mainMenu.y -= 20;
+          that.container.owner.fightMenu.y -= 20;
+          that.container.owner.aboutMenu.y -= 20;
           setTimeout(inAction, 50);
         }
       };
@@ -53,10 +63,8 @@ class fightMenu extends container {
 
     this.drawables.push(this.btnBack);
     this.drawables.push(this.playerPanel);
-    //this.drawables.push(this.villainPanel);
+    this.drawables.push(this.villainPanel);
 
     this.clickables.push(this.btnBack);
-
-
   }
 }

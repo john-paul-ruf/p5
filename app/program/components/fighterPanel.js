@@ -1,6 +1,10 @@
 class fighterPanel extends container {
-  constructor(owner, npc) {
+  constructor(owner, target) {
     super(owner);
+    this.target = target;
+  }
+
+  init() {
 
     this.color = color(256, 256, 256);
     this.width = 125;
@@ -19,13 +23,13 @@ class fighterPanel extends container {
     this.portrait.x = 10;
     this.portrait.width = 100;
     this.portrait.height = 100;
-    this.portrait.text = this.npc instanceof player ? "Player" : 'Villain';
+    this.portrait.text = this.target instanceof villain ? "Villain" : 'Player';
     this.portrait.rounding = 0;
     this.portrait.borderColor = color(0, 0, 0);
     this.portrait.borderWidth = 1;
     this.portrait.dropShadow = false;
 
-    this.health = new progressBar(this, npc.HP);
+    this.health = new progressBar(this, this.target.HP);
     this.health.color = color(128, 128, 128);
     this.health.y = 120;
     this.health.x = 10;
@@ -43,7 +47,7 @@ class fighterPanel extends container {
     this.weapon.x = 10;
     this.weapon.width = 125;
     this.weapon.height = 30;
-    this.weapon.text = npc.weapon.name;
+    this.weapon.text = this.target.weapon.name;
     this.weapon.textSize = 16;
     this.weapon.alignment = 'left';
 
@@ -52,11 +56,4 @@ class fighterPanel extends container {
     this.drawables.push(this.weapon);
   }
 
-  updateText() {
-    this.lblPoints.text = `Distribute ${this.player.availablePoints} points`;
-    this.lblStr.text = `STR: ${this.player.STR}`;
-    this.lblDex.text = `DEX: ${this.player.DEX}`;
-    this.lblInt.text = `INT: ${this.player.INT}`;
-    this.lblHealth.text = `HP: ${this.player.HP}`;
-  }
 }

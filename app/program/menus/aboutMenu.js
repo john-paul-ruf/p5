@@ -1,6 +1,9 @@
 class aboutMenu extends container {
   constructor(owner) {
     super(owner);
+  }
+
+  init() {
 
     this.color = color(256, 256, 256);
     this.x = 50;
@@ -66,8 +69,9 @@ class aboutMenu extends container {
       var that = this;
       var inAction = function () {
         if (that.container.y < 500) {
-          that.container.owner.mainMenu.y += 20;
           that.container.owner.characterBuilder.y += 20;
+          that.container.owner.mainMenu.y += 20;
+          that.container.owner.fightMenu.y += 20;
           that.container.owner.aboutMenu.y += 20;
           setTimeout(inAction, 50);
         }
@@ -78,6 +82,5 @@ class aboutMenu extends container {
 
     this.btnBack.subscribe(this.backTransition);
 
-    
   }
 }

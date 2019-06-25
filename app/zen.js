@@ -1,5 +1,7 @@
+this.program = new program();
+
 function setup() {
-  this.program = new program();
+  this.program.init();
   this.program.setup();
 };
 
