@@ -4,8 +4,7 @@ class dice {
   }
 
   roll() {
-    const value = Math.floor(Math.random() * Math.floor(this.max));
-    return value === 0 ? 1 : value;
+    return Math.floor(Math.random() * Math.floor(this.max)) + 1;
   }
 };
 
