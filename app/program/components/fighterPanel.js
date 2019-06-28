@@ -32,7 +32,7 @@ class FighterPanel extends Container {
     this.portrait.dropShadow = false;
 
     this.portrait.subscribeMouseOver(() => {
-      this.attributes.visible = true;
+      //this.attributes.visible = true;
     });
 
     this.health = new ProgressBar(this, this.target.HP);
@@ -61,6 +61,10 @@ class FighterPanel extends Container {
     this.drawables.push(this.health);
     this.drawables.push(this.weapon);
     this.drawables.push(this.attributes);
+  }
+
+  updateText() {
+    this.weapon.text = this.target.weapon.name;
   }
 
 }

@@ -31,7 +31,7 @@ class FightMenu extends Container {
     this.lblHeader.x = 0;
     this.lblHeader.width = 400;
     this.lblHeader.height = 50;
-    this.lblHeader.text = `Battle ${this.battleNumber} of ${this.totalBattles }`;
+    this.lblHeader.text = `Battle Number ${this.battleNumber}`;
     this.lblHeader.textSize = 26;
     this.lblHeader.alignment = 'center';
 
@@ -163,13 +163,21 @@ class FightMenu extends Container {
   }
 
   updateText() {
-    this.lblHeader.text = `Battle ${this.battleNumber} of ${this.totalBattles}`;
+    this.lblHeader.text = `Battle Number ${this.battleNumber}`;
+  }
+
+  resetBattleNumber() {
+    this.battleNumber = 1;
   }
 
   updateGameState() {
     this.enemy = new Villain(Program.player.level);
     this.enemy.init();
     this.villainPanel.target = this.enemy;
+    Program.player.currentHP = Program.player.HP;
+
+    this.villainPanel.updateText();
+    this.playerPanel.updateText();
   }
 
   draw() {
