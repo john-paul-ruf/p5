@@ -1,7 +1,7 @@
 class Player extends NPC {
   constructor() {
     super();
-    this.availablePoints = Config.initalPoints;
+    this.availablePoints = Program.initalPoints;
     this.fightsSurvived = 0;
     this.level = Math.floor(this.fightsSurvived / 3);
   }

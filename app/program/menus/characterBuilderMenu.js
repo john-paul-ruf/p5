@@ -68,7 +68,7 @@ class CharacterBuilderMenu extends Container {
     this.btnBack.borderWidth = 1;
     this.btnBack.dropShadow = true;
 
-    this.characterAttributes = new CharacterAttributes(this, this.owner.player);
+    this.characterAttributes = new CharacterAttributes(this);
     this.characterAttributes.init();
 
     this.backTransition = function () {
@@ -102,7 +102,7 @@ class CharacterBuilderMenu extends Container {
     if (this.visible) {
       super.draw();
 
-      if (this.owner.player.availablePoints === 0) {
+      if (Program.player.availablePoints === 0) {
         this.btnFight.visible = true;
       } else {
         this.btnFight.visible = false;

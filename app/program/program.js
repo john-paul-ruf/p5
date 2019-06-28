@@ -39,10 +39,7 @@ class Program {
     Config.attributeMinusButtonBorder = color(0, 0, 256);
     Config.attributeMinusButtonBackground = color(128, 128, 128);
 
-    Config.initalPoints = 10;
-
-    this.player = new Player();
-    this.player.init();
+   
 
     this.mainMenu = new MainMenu(this);
     this.mainMenu.init();
@@ -65,3 +62,8 @@ class Program {
 
   }
 }
+
+Program.initalPoints = 10;
+
+Program.player = new Player();
+Program.player.init();

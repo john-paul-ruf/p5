@@ -11,6 +11,8 @@ class Villain extends Player {
     while (this.availablePoints > 0) {
       this.randoAssignPoints();
     }
+
+    this.currentHP = this.HP;
   }
 
   randoAssignPoints() {

@@ -1,7 +1,6 @@
 class MiniAttributes extends Container {
-  constructor(owner, player) {
+  constructor(owner) {
     super(owner);
-    this.player = player;
   }
 
   init() {
@@ -21,7 +20,7 @@ class MiniAttributes extends Container {
     this.lblStr.x = 5;
     this.lblStr.width = 100;
     this.lblStr.height = 15;
-    this.lblStr.text = `STR: ${this.player.STR}`;
+    this.lblStr.text = `STR: ${Program.player.STR}`;
     this.lblStr.textSize = 14;
     this.lblStr.alignment = 'center';
 
@@ -31,7 +30,7 @@ class MiniAttributes extends Container {
     this.lblDex.x = 5;
     this.lblDex.width = 100;
     this.lblDex.height = 15;
-    this.lblDex.text = `DEX: ${this.player.DEX}`;
+    this.lblDex.text = `DEX: ${Program.player.DEX}`;
     this.lblDex.textSize = 14;
     this.lblDex.alignment = 'center';
 
@@ -41,7 +40,7 @@ class MiniAttributes extends Container {
     this.lblInt.x = 5;
     this.lblInt.width = 100;
     this.lblInt.height = 15;
-    this.lblInt.text = `INT: ${this.player.INT}`;
+    this.lblInt.text = `INT: ${Program.player.INT}`;
     this.lblInt.textSize = 14;
     this.lblInt.alignment = 'center';
 
@@ -51,7 +50,7 @@ class MiniAttributes extends Container {
     this.lblHealth.x = 5;
     this.lblHealth.width = 100;
     this.lblHealth.height = 15;
-    this.lblHealth.text = `HP: ${this.player.HP}`;
+    this.lblHealth.text = `HP: ${Program.player.HP}`;
     this.lblHealth.textSize = 14;
     this.lblHealth.alignment = 'center';
 
@@ -64,10 +63,10 @@ class MiniAttributes extends Container {
   }
 
   updateText() {
-    this.lblStr.text = `STR: ${this.player.STR}`;
-    this.lblDex.text = `DEX: ${this.player.DEX}`;
-    this.lblInt.text = `INT: ${this.player.INT}`;
-    this.lblHealth.text = `HP: ${this.player.HP}`;
+    this.lblStr.text = `STR: ${Program.player.STR}`;
+    this.lblDex.text = `DEX: ${Program.player.DEX}`;
+    this.lblInt.text = `INT: ${Program.player.INT}`;
+    this.lblHealth.text = `HP: ${Program.player.HP}`;
   }
 
   draw() {
