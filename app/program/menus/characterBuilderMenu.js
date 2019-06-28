@@ -88,14 +88,26 @@ class CharacterBuilderMenu extends Container {
     this.btnBack.subscribe(this.backTransition);
 
     this.drawables.push(this.btnBack);
-    this.drawables.push(this.btnFight);
     this.drawables.push(this.lblHeader);
     this.drawables.push(this.characterAttributes);
+    this.drawables.push(this.btnFight);
 
     this.clickables.push(this.btnBack);
     this.clickables.push(this.btnFight);
     this.clickables.push(this.characterAttributes);
 
+  }
+
+  draw() {
+    if (this.visible) {
+      super.draw();
+
+      if (this.owner.player.availablePoints === 0) {
+        this.btnFight.visible = true;
+      } else {
+        this.btnFight.visible = false;
+      }
+    }
   }
 
 }

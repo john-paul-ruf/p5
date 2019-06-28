@@ -38,25 +38,10 @@ class MainMenu extends Container {
     this.btnCreateCharacter.borderWidth = 1;
     this.btnCreateCharacter.dropShadow = true;
 
-    this.btnAbout = new Button(this);
-    this.btnAbout.textColor = Config.buttonText;
-    this.btnAbout.color = Config.buttonBackground;
-    this.btnAbout.y = 175;
-    this.btnAbout.x = 100;
-    this.btnAbout.width = 200;
-    this.btnAbout.height = 50;
-    this.btnAbout.text = "About";
-    this.btnAbout.rounding = 10;
-    this.btnAbout.borderColor = Config.buttonBorders;
-    this.btnAbout.borderWidth = 1;
-    this.btnAbout.dropShadow = true;
-
     this.drawables.push(this.lblHeader);
     this.drawables.push(this.btnCreateCharacter);
-    this.drawables.push(this.btnAbout);
 
     this.clickables.push(this.btnCreateCharacter);
-    this.clickables.push(this.btnAbout);
 
     this.characterTransition = function () {
       var that = this;
@@ -74,21 +59,5 @@ class MainMenu extends Container {
 
     this.btnCreateCharacter.subscribe(this.characterTransition);
 
-    this.aboutTransition = function () {
-      var that = this;
-      var inAction = function () {
-        if (that.container.y > -400) {
-          that.container.owner.characterBuilder.y -= 20;
-          that.container.owner.mainMenu.y -= 20;
-          that.container.owner.fightMenu.y -= 20;
-          setTimeout(inAction, 50);
-        }
-      };
-
-      setTimeout(inAction, 50);
-    };
-
-
-    this.btnAbout.subscribe(this.aboutTransition);
   }
 }
