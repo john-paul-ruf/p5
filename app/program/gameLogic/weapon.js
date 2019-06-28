@@ -1,4 +1,4 @@
-class weapon {
+class Weapon {
   constructor(name, min, max, stat) {
     this.name = name;
     this.minDamage = min;
@@ -8,7 +8,7 @@ class weapon {
   }
 
   getDamage() {
-    const die = new dice(this.maxDamage);
+    const die = new Dice(this.maxDamage);
     const dmgRoll = die.roll();
     return dmgRoll < min ? min : dmgRoll;
   }

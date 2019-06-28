@@ -1,11 +1,11 @@
-class characterAttributes extends container {
+class CharacterAttributes extends Container {
   constructor(owner, player) {
     super(owner);
     this.player = player;
   }
 
   init() {
-    this.color = color(256, 256, 256);
+    this.color = Config.menuBackground;
     this.x = 50;
     this.y = 50;
     this.width = 275;
@@ -15,8 +15,8 @@ class characterAttributes extends container {
     this.visible = true;
     this.dropShadow = false;
 
-    this.lblPoints = new label(this);
-    this.lblPoints.textColor = color(0, 0, 0);
+    this.lblPoints = new Label(this);
+    this.lblPoints.textColor = Config.menuText;
     this.lblPoints.y = 5;
     this.lblPoints.x = 0;
     this.lblPoints.width = 275;
@@ -25,8 +25,8 @@ class characterAttributes extends container {
     this.lblPoints.alignment = 'center';
     this.lblPoints.textSize = 21;
 
-    this.lblStr = new label(this);
-    this.lblStr.textColor = color(0, 0, 0);
+    this.lblStr = new Label(this);
+    this.lblStr.textColor = Config.menuText;
     this.lblStr.y = 55;
     this.lblStr.x = 25;
     this.lblStr.width = 100;
@@ -45,36 +45,36 @@ class characterAttributes extends container {
       this.container.updateText();
     };
 
-    this.btnStrPlus = new button(this);
-    this.btnStrPlus.textColor = color(0, 0, 0);
-    this.btnStrPlus.color = color(225, 225, 225);
+    this.btnStrPlus = new Button(this);
+    this.btnStrPlus.textColor = Config.buttonText;
+    this.btnStrPlus.color = Config.attributePlusButtonBackground;
     this.btnStrPlus.y = this.lblStr.y;
     this.btnStrPlus.x = 155;
     this.btnStrPlus.width = 25;
     this.btnStrPlus.height = 25;
     this.btnStrPlus.text = "+";
     this.btnStrPlus.rounding = 0;
-    this.btnStrPlus.borderColor = color(256, 0, 0);
+    this.btnStrPlus.borderColor = Config.attributePlusButtonBorder;
     this.btnStrPlus.borderWidth = 1;
     this.btnStrPlus.subscribe(this.plusClick);
     this.btnStrPlus.attribute = 'STR';
 
-    this.btnStrMinus = new button(this);
-    this.btnStrMinus.textColor = color(0, 0, 0);
-    this.btnStrMinus.color = color(225, 225, 225);
+    this.btnStrMinus = new Button(this);
+    this.btnStrMinus.textColor = Config.buttonText;
+    this.btnStrMinus.color = Config.attributeMinusButtonBackground;
     this.btnStrMinus.y = this.lblStr.y;
     this.btnStrMinus.x = 185;
     this.btnStrMinus.width = 25;
     this.btnStrMinus.height = 25;
     this.btnStrMinus.text = "-";
     this.btnStrMinus.rounding = 0;
-    this.btnStrMinus.borderColor = color(0, 0, 256);
+    this.btnStrMinus.borderColor = Config.attributeMinusButtonBorder;
     this.btnStrMinus.borderWidth = 1;
     this.btnStrMinus.subscribe(this.minusClick);
     this.btnStrMinus.attribute = 'STR';
 
-    this.lblDex = new label(this);
-    this.lblDex.textColor = color(0, 0, 0);
+    this.lblDex = new Label(this);
+    this.lblDex.textColor = Config.menuText;
     this.lblDex.y = 85;
     this.lblDex.x = 25;
     this.lblDex.width = 100;
@@ -83,36 +83,36 @@ class characterAttributes extends container {
     this.lblDex.textSize = 21;
     this.lblDex.alignment = 'right';
 
-    this.btnDexPlus = new button(this);
-    this.btnDexPlus.textColor = color(0, 0, 0);
-    this.btnDexPlus.color = color(225, 225, 225);
+    this.btnDexPlus = new Button(this);
+    this.btnDexPlus.textColor = Config.buttonText;
+    this.btnDexPlus.color = Config.attributePlusButtonBackground;
     this.btnDexPlus.y = this.lblDex.y;
     this.btnDexPlus.x = 155;
     this.btnDexPlus.width = 25;
     this.btnDexPlus.height = 25;
     this.btnDexPlus.text = "+";
     this.btnDexPlus.rounding = 0;
-    this.btnDexPlus.borderColor = color(256, 0, 0);
+    this.btnDexPlus.borderColor = Config.attributePlusButtonBorder;
     this.btnDexPlus.borderWidth = 1;
     this.btnDexPlus.subscribe(this.plusClick);
     this.btnDexPlus.attribute = 'DEX';
 
-    this.btnDexMinus = new button(this);
-    this.btnDexMinus.textColor = color(0, 0, 0);
-    this.btnDexMinus.color = color(225, 225, 225);
+    this.btnDexMinus = new Button(this);
+    this.btnDexMinus.textColor = Config.buttonText;
+    this.btnDexMinus.color = Config.attributeMinusButtonBackground;
     this.btnDexMinus.y = this.lblDex.y;
     this.btnDexMinus.x = 185;
     this.btnDexMinus.width = 25;
     this.btnDexMinus.height = 25;
     this.btnDexMinus.text = "-";
     this.btnDexMinus.rounding = 0;
-    this.btnDexMinus.borderColor = color(0, 0, 256);
+    this.btnDexMinus.borderColor = Config.attributeMinusButtonBorder;
     this.btnDexMinus.borderWidth = 1;
     this.btnDexMinus.subscribe(this.minusClick);
     this.btnDexMinus.attribute = 'DEX';
 
-    this.lblInt = new label(this);
-    this.lblInt.textColor = color(0, 0, 0);
+    this.lblInt = new Label(this);
+    this.lblInt.textColor = Config.menuText;
     this.lblInt.y = 115;
     this.lblInt.x = 25;
     this.lblInt.width = 100;
@@ -121,36 +121,36 @@ class characterAttributes extends container {
     this.lblInt.textSize = 21;
     this.lblInt.alignment = 'right';
 
-    this.btnIntPlus = new button(this);
-    this.btnIntPlus.textColor = color(0, 0, 0);
-    this.btnIntPlus.color = color(225, 225, 225);
+    this.btnIntPlus = new Button(this);
+    this.btnIntPlus.textColor = Config.buttonText;
+    this.btnIntPlus.color = Config.attributePlusButtonBackground;
     this.btnIntPlus.y = this.lblInt.y;
     this.btnIntPlus.x = 155;
     this.btnIntPlus.width = 25;
     this.btnIntPlus.height = 25;
     this.btnIntPlus.text = "+";
     this.btnIntPlus.rounding = 0;
-    this.btnIntPlus.borderColor = color(256, 0, 0);
+    this.btnIntPlus.borderColor = Config.attributePlusButtonBorder;
     this.btnIntPlus.borderWidth = 1;
     this.btnIntPlus.subscribe(this.plusClick);
     this.btnIntPlus.attribute = 'INT';
 
-    this.btnIntMinus = new button(this);
-    this.btnIntMinus.textColor = color(0, 0, 0);
-    this.btnIntMinus.color = color(225, 225, 225);
+    this.btnIntMinus = new Button(this);
+    this.btnIntMinus.textColor = Config.buttonText;
+    this.btnIntMinus.color = Config.attributeMinusButtonBackground;
     this.btnIntMinus.y = this.lblInt.y;
     this.btnIntMinus.x = 185;
     this.btnIntMinus.width = 25;
     this.btnIntMinus.height = 25;
     this.btnIntMinus.text = "-";
     this.btnIntMinus.rounding = 0;
-    this.btnIntMinus.borderColor = color(0, 0, 256);
+    this.btnIntMinus.borderColor = Config.attributeMinusButtonBorder;
     this.btnIntMinus.borderWidth = 1;
     this.btnIntMinus.subscribe(this.minusClick);
     this.btnIntMinus.attribute = 'INT';
 
-    this.lblHealth = new label(this);
-    this.lblHealth.textColor = color(0, 0, 0);
+    this.lblHealth = new Label(this);
+    this.lblHealth.textColor = Config.menuText;
     this.lblHealth.y = 145;
     this.lblHealth.x = 25;
     this.lblHealth.width = 100;
@@ -159,30 +159,30 @@ class characterAttributes extends container {
     this.lblHealth.textSize = 21;
     this.lblHealth.alignment = 'right';
 
-    this.btnHealthPlus = new button(this);
-    this.btnHealthPlus.textColor = color(0, 0, 0);
-    this.btnHealthPlus.color = color(225, 225, 225);
+    this.btnHealthPlus = new Button(this);
+    this.btnHealthPlus.textColor = Config.buttonText;
+    this.btnHealthPlus.color = Config.attributePlusButtonBackground;
     this.btnHealthPlus.y = this.lblHealth.y;
     this.btnHealthPlus.x = 155;
     this.btnHealthPlus.width = 25;
     this.btnHealthPlus.height = 25;
     this.btnHealthPlus.text = "+";
     this.btnHealthPlus.rounding = 0;
-    this.btnHealthPlus.borderColor = color(256, 0, 0);
+    this.btnHealthPlus.borderColor = Config.attributePlusButtonBorder;
     this.btnHealthPlus.borderWidth = 1;
     this.btnHealthPlus.subscribe(this.plusClick);
     this.btnHealthPlus.attribute = 'HP';
 
-    this.btnHealthMinus = new button(this);
-    this.btnHealthMinus.textColor = color(0, 0, 0);
-    this.btnHealthMinus.color = color(225, 225, 225);
+    this.btnHealthMinus = new Button(this);
+    this.btnHealthMinus.textColor = Config.buttonText;
+    this.btnHealthMinus.color = Config.attributeMinusButtonBackground;
     this.btnHealthMinus.y = this.lblHealth.y;
     this.btnHealthMinus.x = 185;
     this.btnHealthMinus.width = 25;
     this.btnHealthMinus.height = 25;
     this.btnHealthMinus.text = "-";
     this.btnHealthMinus.rounding = 0;
-    this.btnHealthMinus.borderColor = color(0, 0, 256);
+    this.btnHealthMinus.borderColor = Config.attributeMinusButtonBorder;
     this.btnHealthMinus.borderWidth = 1;
     this.btnHealthMinus.subscribe(this.minusClick);
     this.btnHealthMinus.attribute = 'HP';

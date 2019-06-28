@@ -1,4 +1,4 @@
-class button extends clickable {
+class Button extends Clickable {
   constructor(container) {
     super();
     

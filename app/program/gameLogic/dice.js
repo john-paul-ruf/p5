@@ -1,4 +1,4 @@
-class dice {
+class Dice {
   constructor(max) {
     this.max = max;
   }

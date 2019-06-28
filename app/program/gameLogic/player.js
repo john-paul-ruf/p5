@@ -1,13 +1,13 @@
-class player extends npc {
+class Player extends NPC {
   constructor() {
     super();
-    this.availablePoints = 5;
+    this.availablePoints = Config.initalPoints;
     this.fightsSurvived = 0;
     this.level = Math.floor(this.fightsSurvived / 3);
   }
 
   init() {
-    this.weapon = lootGenerator.generateWeapon();
+    this.weapon = LootGenerator.generateWeapon();
   }
 
   addPoint(attribute) {
@@ -59,4 +59,4 @@ class player extends npc {
           break;
       }
   }
-};
+}

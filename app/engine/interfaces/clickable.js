@@ -1,4 +1,4 @@
-class clickable extends drawable {
+class Clickable extends Drawable {
   constructor() {
     super();
     this.clickHandlers = [];

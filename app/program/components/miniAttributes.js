@@ -1,12 +1,12 @@
-class miniAttributes extends container {
+class MiniAttributes extends Container {
   constructor(owner, player) {
     super(owner);
     this.player = player;
   }
 
   init() {
-    this.color = color(256, 256, 256);
-    this.textColor = color(0, 0, 0);
+    this.color = Config.menuBackground;
+    this.textColor = Config.menuText;
     this.y = 10;
     this.x = 10;
     this.width = 100;
@@ -15,8 +15,8 @@ class miniAttributes extends container {
     this.borderWidth = 0;
     this.dropShadow = false;
 
-    this.lblStr = new label(this);
-    this.lblStr.textColor = color(0, 0, 0);
+    this.lblStr = new Label(this);
+    this.lblStr.textColor = Config.menuText;
     this.lblStr.y = 5;
     this.lblStr.x = 5;
     this.lblStr.width = 100;
@@ -25,8 +25,8 @@ class miniAttributes extends container {
     this.lblStr.textSize = 14;
     this.lblStr.alignment = 'center';
 
-    this.lblDex = new label(this);
-    this.lblDex.textColor = color(0, 0, 0);
+    this.lblDex = new Label(this);
+    this.lblDex.textColor = Config.menuText;
     this.lblDex.y = 25;
     this.lblDex.x = 5;
     this.lblDex.width = 100;
@@ -35,8 +35,8 @@ class miniAttributes extends container {
     this.lblDex.textSize = 14;
     this.lblDex.alignment = 'center';
 
-    this.lblInt = new label(this);
-    this.lblInt.textColor = color(0, 0, 0);
+    this.lblInt = new Label(this);
+    this.lblInt.textColor = Config.menuText;
     this.lblInt.y = 50;
     this.lblInt.x = 5;
     this.lblInt.width = 100;
@@ -45,8 +45,8 @@ class miniAttributes extends container {
     this.lblInt.textSize = 14;
     this.lblInt.alignment = 'center';
 
-    this.lblHealth = new label(this);
-    this.lblHealth.textColor = color(0, 0, 0);
+    this.lblHealth = new Label(this);
+    this.lblHealth.textColor = Config.menuText;
     this.lblHealth.y = 75;
     this.lblHealth.x = 5;
     this.lblHealth.width = 100;

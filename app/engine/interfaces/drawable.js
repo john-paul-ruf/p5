@@ -1,4 +1,4 @@
-class drawable {
+class Drawable {
   constructor() {
     this.mouseOverhandlers = [];
     this.x = 0;

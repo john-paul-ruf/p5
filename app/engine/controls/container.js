@@ -1,4 +1,4 @@
-class container extends drawable {
+class Container extends Drawable {
   constructor(owner) {
     super();
     this.drawables = [];
@@ -21,7 +21,7 @@ class container extends drawable {
 
   get relativeX() {
 
-    if (this.owner instanceof container) {
+    if (this.owner instanceof Container) {
       return this.owner.relativeX + this.x;
     }
 
@@ -29,7 +29,7 @@ class container extends drawable {
   }
 
   get relativeY() {
-    if (this.owner instanceof container) {
+    if (this.owner instanceof Container) {
       return this.owner.relativeY + this.y;
     }
 

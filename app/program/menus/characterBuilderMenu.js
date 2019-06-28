@@ -1,23 +1,23 @@
-class characterBuilderMenu extends container {
+class CharacterBuilderMenu extends Container {
   constructor(owner) {
     super(owner);
   }
 
   init() {
 
-    this.color = color(256, 256, 256);
+    this.color = Config.menuBackground;
     this.x = 50;
     this.y = -400;
     this.width = 400;
     this.height = 400;
     this.borderWidth = 3;
-    this.borderColor = color(0, 256, 0);
+    this.borderColor = Config.buttonBorders;
     this.rounding = 10;
     this.visible = true;
     this.dropShadow = true;
 
-    this.lblHeader = new label(this);
-    this.lblHeader.textColor = color(0, 0, 0);
+    this.lblHeader = new Label(this);
+    this.lblHeader.textColor = Config.menuText;
     this.lblHeader.y = 10;
     this.lblHeader.x = 0;
     this.lblHeader.width = 400;
@@ -26,16 +26,16 @@ class characterBuilderMenu extends container {
     this.lblHeader.alignment = 'center';
     this.lblHeader.textSize = 26;
 
-    this.btnFight = new button(this);
-    this.btnFight.textColor = color(0, 0, 0);
-    this.btnFight.color = color(225, 225, 225);
+    this.btnFight = new Button(this);
+    this.btnFight.textColor = Config.menuText;
+    this.btnFight.color = Config.buttonBackground;
     this.btnFight.y = 240;
     this.btnFight.x = 100;
     this.btnFight.width = 200;
     this.btnFight.height = 50;
     this.btnFight.text = "Fight";
     this.btnFight.rounding = 10;
-    this.btnFight.borderColor = color(0, 256, 0);
+    this.btnFight.borderColor = Config.buttonBorders;
     this.btnFight.borderWidth = 1;
     this.btnFight.dropShadow = true;
 
@@ -47,7 +47,6 @@ class characterBuilderMenu extends container {
           that.container.owner.characterBuilder.y += 20;
           that.container.owner.mainMenu.y += 20;
           that.container.owner.fightMenu.y += 20;
-          that.container.owner.aboutMenu.y += 20;
           setTimeout(inAction, 50);
         }
       };
@@ -56,20 +55,20 @@ class characterBuilderMenu extends container {
 
     this.btnFight.subscribe(this.fightTransition);
 
-    this.btnBack = new button(this);
-    this.btnBack.textColor = color(0, 0, 0);
-    this.btnBack.color = color(225, 225, 225);
+    this.btnBack = new Button(this);
+    this.btnBack.textColor = Config.menuText;
+    this.btnBack.color = Config.buttonBackground;
     this.btnBack.y = 300;
     this.btnBack.x = 100;
     this.btnBack.width = 200;
     this.btnBack.height = 50;
     this.btnBack.text = "Back to Main";
     this.btnBack.rounding = 10;
-    this.btnBack.borderColor = color(0, 256, 0);
+    this.btnBack.borderColor = Config.buttonBorders;
     this.btnBack.borderWidth = 1;
     this.btnBack.dropShadow = true;
 
-    this.characterAttributes = new characterAttributes(this, this.owner.player);
+    this.characterAttributes = new CharacterAttributes(this, this.owner.player);
     this.characterAttributes.init();
 
     this.backTransition = function () {
@@ -79,7 +78,6 @@ class characterBuilderMenu extends container {
           that.container.owner.characterBuilder.y -= 20;
           that.container.owner.mainMenu.y -= 20;
           that.container.owner.fightMenu.y -= 20;
-          that.container.owner.aboutMenu.y -= 20;
           setTimeout(inAction, 50);
         }
       };

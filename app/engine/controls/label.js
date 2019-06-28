@@ -1,4 +1,4 @@
-class label extends drawable{
+class Label extends Drawable{
   constructor(container) {
     super();
 

@@ -1,4 +1,4 @@
-class lootGenerator {
+class LootGenerator {
   constructor() {
   }
 
@@ -6,24 +6,30 @@ class lootGenerator {
     _.forEach(modificationArray, m => {
       switch (m.stat) {
         case 'STR':
-          weapon.name = 'Sharp '.concat(weapon.name);
+          if (!weapon.name.includes('Sharp')) {
+            weapon.name = 'Sharp '.concat(weapon.name);
+          }
           weapon.modifications.push(m);
           break;
         case 'DEX':
-          weapon.name = 'Swift '.concat(weapon.name);
+          if (!weapon.name.includes('Swift')) {
+            weapon.name = 'Swift '.concat(weapon.name);
+          }
           weapon.modifications.push(m);
           break;
         case 'INT':
-          weapon.name = 'Shiny '.concat(weapon.name);
+          if (!weapon.name.includes('Shiny')) {
+            weapon.name = 'Shiny '.concat(weapon.name);
+          }
           weapon.modifications.push(m);
           break;
       }
     });
-  };
+  }
 
   static generateWeapon() {
 
-    const d20 = new dice(20);
+    const d20 = new Dice(20);
 
     let returnWeapon;
 
@@ -31,42 +37,42 @@ class lootGenerator {
       case 1:
       case 2:
       case 3:
-        returnWeapon = new weapon('Dagger', 1, 2, 'STR');
+        returnWeapon = new Weapon('Dagger', 1, 2, 'STR');
         break;
 
       case 4:
       case 5:
       case 6:
-        returnWeapon = new weapon('Sword', 1, 4, 'STR');
+        returnWeapon = new Weapon('Sword', 1, 4, 'STR');
         break;
 
       case 7:
       case 8:
       case 9:
-        returnWeapon = new weapon('Axe', 2, 3, 'STR');
+        returnWeapon = new Weapon('Axe', 2, 3, 'STR');
         break;
 
       case 10:
       case 11:
       case 12:
-        returnWeapon = new weapon('Wand', 1, 2, 'INT');
+        returnWeapon = new Weapon('Wand', 1, 2, 'INT');
         break;
 
       case 13:
       case 14:
       case 15:
-        returnWeapon = new weapon('Glyph', 1, 4, 'INT');
+        returnWeapon = new Weapon('Glyph', 1, 4, 'INT');
         break;
 
       case 16:
       case 17:
       case 18:
-        returnWeapon = new weapon('Staff', 2, 3, 'INT');
+        returnWeapon = new Weapon('Staff', 2, 3, 'INT');
         break;
 
       case 19:
       case 20:
-        returnWeapon = new weapon('Dual Blades', 1, 6, 'DEX');
+        returnWeapon = new Weapon('Dual Blades', 1, 6, 'DEX');
         break;
     }
 
@@ -74,19 +80,19 @@ class lootGenerator {
       case 15:
       case 16:
       case 17:
-        lootGenerator.enhanceWeapon(returnWeapon, [weaponModification.generateWeaponModification()]);
+        LootGenerator.enhanceWeapon(returnWeapon, [WeaponModification.generateWeaponModification()]);
         break;
 
       case 18:
       case 19:
-        lootGenerator.enhanceWeapon(returnWeapon, [weaponModification.generateWeaponModification(),
-        weaponModification.generateWeaponModification()]);
+        LootGenerator.enhanceWeapon(returnWeapon, [WeaponModification.generateWeaponModification(),
+          WeaponModification.generateWeaponModification()]);
         break;
 
       case 20:
-        lootGenerator.enhanceWeapon(returnWeapon, [weaponModification.generateWeaponModification(),
-        weaponModification.generateWeaponModification(),
-        weaponModification.generateWeaponModification()]);
+        LootGenerator.enhanceWeapon(returnWeapon, [WeaponModification.generateWeaponModification(),
+          WeaponModification.generateWeaponModification(),
+          WeaponModification.generateWeaponModification()]);
         break;
     }
 

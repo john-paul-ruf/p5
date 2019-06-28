@@ -1,13 +1,13 @@
-class weaponModification {
+class WeaponModification {
   constructor() {
     this.stat = undefined;
     this.bonus = 0;
   }
 
   static generateWeaponModification() {
-    const d3 = new dice(3);
+    const d3 = new Dice(3);
 
-    const modification = new weaponModification();
+    const modification = new WeaponModification();
     modification.bonus = d3.roll();
 
     switch (d3.roll()) {

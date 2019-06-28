@@ -1,22 +1,22 @@
-class mainMenu extends container {
+class MainMenu extends Container {
   constructor(owner) {
     super(owner);
   }
 
   init() {
 
-    this.color = color(256, 256, 256);
+    this.color = Config.menuBackground;
     this.x = 50;
     this.y = 50;
     this.width = 400;
     this.height = 400;
     this.borderWidth = 3;
-    this.borderColor = color(0, 256, 0);
+    this.borderColor = Config.menuBorders;
     this.rounding = 10;
     this.dropShadow = true;
 
-    this.lblHeader = new label(this);
-    this.lblHeader.textColor = color(0, 0, 0);
+    this.lblHeader = new Label(this);
+    this.lblHeader.textColor = Config.menuText;
     this.lblHeader.y = 20;
     this.lblHeader.x = 0;
     this.lblHeader.width = 400;
@@ -25,29 +25,29 @@ class mainMenu extends container {
     this.lblHeader.textSize = 26;
     this.lblHeader.alignment = 'center';
 
-    this.btnCreateCharacter = new button(this);
-    this.btnCreateCharacter.textColor = color(0, 0, 0);
-    this.btnCreateCharacter.color = color(225, 225, 225);
+    this.btnCreateCharacter = new Button(this);
+    this.btnCreateCharacter.textColor = Config.buttonText;
+    this.btnCreateCharacter.color = Config.buttonBackground;
     this.btnCreateCharacter.y = 100;
     this.btnCreateCharacter.x = 100;
     this.btnCreateCharacter.width = 200;
     this.btnCreateCharacter.height = 50;
     this.btnCreateCharacter.text = "Create Character";
     this.btnCreateCharacter.rounding = 10;
-    this.btnCreateCharacter.borderColor = color(0, 256, 0);
+    this.btnCreateCharacter.borderColor = Config.buttonBorders;
     this.btnCreateCharacter.borderWidth = 1;
     this.btnCreateCharacter.dropShadow = true;
 
-    this.btnAbout = new button(this);
-    this.btnAbout.textColor = color(0, 0, 0);
-    this.btnAbout.color = color(225, 225, 225);
+    this.btnAbout = new Button(this);
+    this.btnAbout.textColor = Config.buttonText;
+    this.btnAbout.color = Config.buttonBackground;
     this.btnAbout.y = 175;
     this.btnAbout.x = 100;
     this.btnAbout.width = 200;
     this.btnAbout.height = 50;
     this.btnAbout.text = "About";
     this.btnAbout.rounding = 10;
-    this.btnAbout.borderColor = color(0, 256, 0);
+    this.btnAbout.borderColor = Config.buttonBorders;
     this.btnAbout.borderWidth = 1;
     this.btnAbout.dropShadow = true;
 
@@ -65,7 +65,6 @@ class mainMenu extends container {
           that.container.owner.characterBuilder.y += 20;
           that.container.owner.mainMenu.y += 20;
           that.container.owner.fightMenu.y += 20;
-          that.container.owner.aboutMenu.y += 20;
           setTimeout(inAction, 50);
         }
       };
@@ -82,7 +81,6 @@ class mainMenu extends container {
           that.container.owner.characterBuilder.y -= 20;
           that.container.owner.mainMenu.y -= 20;
           that.container.owner.fightMenu.y -= 20;
-          that.container.owner.aboutMenu.y -= 20;
           setTimeout(inAction, 50);
         }
       };

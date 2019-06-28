@@ -1,13 +1,13 @@
-class villain extends player {
+class Villain extends Player {
   constructor(level) {
     super();
     this.availablePoints = 5 + level;
   }
 
   init() {
-    this.weapon = lootGenerator.generateWeapon();
+    this.weapon = LootGenerator.generateWeapon();
 
-    this.die = new dice(4);
+    this.die = new Dice(4);
     while (this.availablePoints > 0) {
       this.randoAssignPoints();
     }

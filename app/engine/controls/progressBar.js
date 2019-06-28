@@ -1,4 +1,4 @@
-class progressBar extends drawable {
+class ProgressBar extends Drawable {
   constructor(container, max) {
     super();
     this.container = container;

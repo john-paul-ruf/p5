@@ -1,4 +1,4 @@
-class fighterPanel extends container {
+class FighterPanel extends Container {
   constructor(owner, target) {
     super(owner);
     this.target = target;
@@ -6,7 +6,7 @@ class fighterPanel extends container {
 
   init() {
 
-    this.color = color(256, 256, 256);
+    this.color = Config.menuBackground;
     this.width = 125;
     this.height = 180;
     this.borderWidth = 0;
@@ -14,19 +14,18 @@ class fighterPanel extends container {
     this.visible = true;
     this.dropShadow = false;
 
-    this.npc = npc;
-    this.attributes = new miniAttributes(this, this.target);
+    this.attributes = new MiniAttributes(this, this.target);
     this.attributes.init();
     this.attributes.visible = false;
 
-    this.portrait = new button(this);
-    this.portrait.textColor = color(0, 0, 0);
-    this.portrait.color = color(256, 256, 256);
+    this.portrait = new Button(this);
+    this.portrait.textColor = Config.menuText;
+    this.portrait.color = Config.menuBackground;
     this.portrait.y = 10;
     this.portrait.x = 10;
     this.portrait.width = 100;
     this.portrait.height = 100;
-    this.portrait.text = this.target instanceof villain ? "Villain" : 'Player';
+    this.portrait.text = this.target instanceof Villain ? "Villain" : 'Player';
     this.portrait.rounding = 0;
     this.portrait.borderColor = color(0, 0, 0);
     this.portrait.borderWidth = 1;
@@ -36,7 +35,7 @@ class fighterPanel extends container {
       this.attributes.visible = true;
     });
 
-    this.health = new progressBar(this, this.target.HP);
+    this.health = new ProgressBar(this, this.target.HP);
     this.health.color = color(128, 128, 128);
     this.health.y = 120;
     this.health.x = 10;
@@ -48,8 +47,8 @@ class fighterPanel extends container {
     this.health.borderWidth = 1;
     this.health.dropShadow = false;
 
-    this.weapon = new label(this);
-    this.weapon.textColor = color(0, 0, 0);
+    this.weapon = new Label(this);
+    this.weapon.textColor = Config.menuText;
     this.weapon.y = 140;
     this.weapon.x = 10;
     this.weapon.width = 125;

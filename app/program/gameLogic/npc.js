@@ -1,4 +1,4 @@
-class npc {
+class NPC {
   constructor() {
     this.STR = 7;
     this.DEX = 7;
@@ -30,7 +30,7 @@ class npc {
   }
 
   getDamage(statValue, npc) {
-    const d20 = new dice(20);
+    const d20 = new Dice(20);
     let damage = 0;
     const hitRoll = d20.roll();
     if (hitRoll + statValue / 2 > npc.DEX) {

@@ -1,4 +1,4 @@
-this.program = new program();
+this.program = new Program();
 
 function setup() {
   this.program.init();
