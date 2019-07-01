@@ -5,10 +5,10 @@ class FightMenu extends Container {
 
   init() {
 
-    this.enemy = new Villain(Program.player.level);
+    this.enemy = new Villain(ArenaRPG.player.level);
     this.enemy.init();
 
-    Program.player;
+    ArenaRPG.player;
 
     this.battleNumber = 1;
     this.totalBattles = 3;
@@ -35,7 +35,7 @@ class FightMenu extends Container {
     this.lblHeader.textSize = 26;
     this.lblHeader.alignment = 'center';
 
-    this.playerPanel = new FighterPanel(this, Program.player);
+    this.playerPanel = new FighterPanel(this, ArenaRPG.player);
     this.playerPanel.init();
  
     this.villainPanel = new FighterPanel(this, this.enemy);
@@ -62,8 +62,8 @@ class FightMenu extends Container {
     this.btnAttack.dropShadow = true;
 
     this.attack = function () {
-      Program.player.attack(this.container.enemy);
-      this.container.enemy.attack(Program.player);
+      ArenaRPG.player.attack(this.container.enemy);
+      this.container.enemy.attack(ArenaRPG.player);
 
       if (this.container.enemy.currentHP <= 0) {
         this.container.battleNumber++;
@@ -76,9 +76,9 @@ class FightMenu extends Container {
         }
       }
 
-      if (Program.player.currentHP < 0) {
-        Program.player = new Player();
-        Program.player.init();
+      if (ArenaRPG.player.currentHP < 0) {
+        ArenaRPG.player = new Player();
+        ArenaRPG.player.init();
 
         this.container.owner.characterBuilder.characterAttributes.updateText();
 
@@ -111,7 +111,7 @@ class FightMenu extends Container {
     this.btnTakeWeapon.dropShadow = true;
 
     this.takeWeapon = function () {
-      Program.player.weapon = this.container.enemy.weapon;
+      ArenaRPG.player.weapon = this.container.enemy.weapon;
       this.container.btnLeaveWeapon.visible = false;
       this.container.btnTakeWeapon.visible = false;
       this.container.btnAttack.visible = true;
@@ -171,10 +171,10 @@ class FightMenu extends Container {
   }
 
   updateGameState() {
-    this.enemy = new Villain(Program.player.level);
+    this.enemy = new Villain(ArenaRPG.player.level);
     this.enemy.init();
     this.villainPanel.target = this.enemy;
-    Program.player.currentHP = Program.player.HP;
+    ArenaRPG.player.currentHP = ArenaRPG.player.HP;
 
     this.villainPanel.updateText();
     this.playerPanel.updateText();
@@ -183,7 +183,7 @@ class FightMenu extends Container {
   draw() {
     if (this.visible) {
       super.draw();
-      this.playerPanel.health.current = Program.player.currentHP;
+      this.playerPanel.health.current = ArenaRPG.player.currentHP;
       this.villainPanel.health.current = this.enemy.currentHP;
     }
   }

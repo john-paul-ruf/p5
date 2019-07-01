@@ -104,7 +104,7 @@ class CharacterBuilderMenu extends Container {
     if (this.visible) {
       super.draw();
 
-      if (Program.player.availablePoints === 0) {
+      if (ArenaRPG.player.availablePoints === 0) {
         this.btnFight.visible = true;
       } else {
         this.btnFight.visible = false;

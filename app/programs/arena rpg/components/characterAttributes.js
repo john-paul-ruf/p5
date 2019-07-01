@@ -20,7 +20,7 @@ class CharacterAttributes extends Container {
     this.lblPoints.x = 0;
     this.lblPoints.width = 275;
     this.lblPoints.height = 50;
-    this.lblPoints.text = `Distribute ${Program.player.availablePoints} points`;
+    this.lblPoints.text = `Distribute ${ArenaRPG.player.availablePoints} points`;
     this.lblPoints.alignment = 'center';
     this.lblPoints.textSize = 21;
 
@@ -30,17 +30,17 @@ class CharacterAttributes extends Container {
     this.lblStr.x = 25;
     this.lblStr.width = 100;
     this.lblStr.height = 30;
-    this.lblStr.text = `STR: ${Program.player.STR}`;
+    this.lblStr.text = `STR: ${ArenaRPG.player.STR}`;
     this.lblStr.textSize = 21;
     this.lblStr.alignment = 'right';
 
     this.plusClick = function () {
-      Program.player.addPoint(this.attribute);
+      ArenaRPG.player.addPoint(this.attribute);
       this.container.updateText();
     };
 
     this.minusClick = function () {
-      Program.player.subtractPoint(this.attribute);
+      ArenaRPG.player.subtractPoint(this.attribute);
       this.container.updateText();
     };
 
@@ -78,7 +78,7 @@ class CharacterAttributes extends Container {
     this.lblDex.x = 25;
     this.lblDex.width = 100;
     this.lblDex.height = 30;
-    this.lblDex.text = `DEX: ${Program.player.DEX}`;
+    this.lblDex.text = `DEX: ${ArenaRPG.player.DEX}`;
     this.lblDex.textSize = 21;
     this.lblDex.alignment = 'right';
 
@@ -116,7 +116,7 @@ class CharacterAttributes extends Container {
     this.lblInt.x = 25;
     this.lblInt.width = 100;
     this.lblInt.height = 30;
-    this.lblInt.text = `INT: ${Program.player.INT}`;
+    this.lblInt.text = `INT: ${ArenaRPG.player.INT}`;
     this.lblInt.textSize = 21;
     this.lblInt.alignment = 'right';
 
@@ -154,7 +154,7 @@ class CharacterAttributes extends Container {
     this.lblHealth.x = 25;
     this.lblHealth.width = 100;
     this.lblHealth.height = 30;
-    this.lblHealth.text = `HP: ${Program.player.HP}`;
+    this.lblHealth.text = `HP: ${ArenaRPG.player.HP}`;
     this.lblHealth.textSize = 21;
     this.lblHealth.alignment = 'right';
 
@@ -218,10 +218,10 @@ class CharacterAttributes extends Container {
 
   }
   updateText() {
-    this.lblPoints.text = `Distribute ${Program.player.availablePoints} points`;
-    this.lblStr.text = `STR: ${Program.player.STR}`;
-    this.lblDex.text = `DEX: ${Program.player.DEX}`;
-    this.lblInt.text = `INT: ${Program.player.INT}`;
-    this.lblHealth.text = `HP: ${Program.player.HP}`;
+    this.lblPoints.text = `Distribute ${ArenaRPG.player.availablePoints} points`;
+    this.lblStr.text = `STR: ${ArenaRPG.player.STR}`;
+    this.lblDex.text = `DEX: ${ArenaRPG.player.DEX}`;
+    this.lblInt.text = `INT: ${ArenaRPG.player.INT}`;
+    this.lblHealth.text = `HP: ${ArenaRPG.player.HP}`;
   }
 }

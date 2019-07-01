@@ -1,6 +1,6 @@
-class Program {
+class ArenaRPG {
   constructor() {
-
+    this.running = false;
   }
 
   setup() {
@@ -8,16 +8,20 @@ class Program {
   }
 
   draw() {
-    background(96);
-    this.mainMenu.draw();
-    this.characterBuilder.draw();
-    this.fightMenu.draw();
+    if (Loader.runningProgram === 'arena') {
+      background(96);
+      this.mainMenu.draw();
+      this.characterBuilder.draw();
+      this.fightMenu.draw();
+    }
   }
 
   mouseClick() {
-    this.mainMenu.onClick();
-    this.characterBuilder.onClick();
-    this.fightMenu.onClick();
+    if (Loader.runningProgram === 'arena') {
+      this.mainMenu.onClick();
+      this.characterBuilder.onClick();
+      this.fightMenu.onClick();
+    }
   }
 
   init() {
@@ -63,7 +67,7 @@ class Program {
   }
 }
 
-Program.initalPoints = 10;
+ArenaRPG.initalPoints = 10;
 
-Program.player = new Player();
-Program.player.init();
+ArenaRPG.player = new Player();
+ArenaRPG.player.init();
