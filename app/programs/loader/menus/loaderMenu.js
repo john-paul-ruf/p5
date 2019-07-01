@@ -38,16 +38,37 @@ class LoaderMenu extends Container {
     this.btnArenaRPG.borderWidth = 1;
     this.btnArenaRPG.dropShadow = true;
 
+    this.btnAsteroids = new Button(this);
+    this.btnAsteroids.textColor = Config.buttonText;
+    this.btnAsteroids.color = Config.buttonBackground;
+    this.btnAsteroids.y = 140;
+    this.btnAsteroids.x = 100;
+    this.btnAsteroids.width = 200;
+    this.btnAsteroids.height = 50;
+    this.btnAsteroids.text = "Asteroids";
+    this.btnAsteroids.rounding = 10;
+    this.btnAsteroids.borderColor = Config.buttonBorders;
+    this.btnAsteroids.borderWidth = 1;
+    this.btnAsteroids.dropShadow = true;
+
     this.drawables.push(this.lblHeader);
     this.drawables.push(this.btnArenaRPG);
+    this.drawables.push(this.btnAsteroids);
 
     this.clickables.push(this.btnArenaRPG);
+    this.clickables.push(this.btnAsteroids);
 
     this.arenaTransition = function () {
       Loader.runningProgram = 'arena';
     };
 
     this.btnArenaRPG.subscribe(this.arenaTransition);
+
+    this.asteroidsTransition = function () {
+      Loader.runningProgram = 'asteroids';
+    };
+
+    this.btnAsteroids.subscribe(this.asteroidsTransition);
 
   }
 }

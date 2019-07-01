@@ -1,4 +1,4 @@
-class MainMenu extends Container {
+class AsteroidsMenu extends Container {
   constructor(owner) {
     super(owner);
   }
@@ -21,22 +21,22 @@ class MainMenu extends Container {
     this.lblHeader.x = 0;
     this.lblHeader.width = 400;
     this.lblHeader.height = 50;
-    this.lblHeader.text = "p5.js - Arena RPG Template";
+    this.lblHeader.text = "p5.js - Asteroids Template";
     this.lblHeader.textSize = 26;
     this.lblHeader.alignment = 'center';
 
-    this.btnCreateCharacter = new Button(this);
-    this.btnCreateCharacter.textColor = Config.buttonText;
-    this.btnCreateCharacter.color = Config.buttonBackground;
-    this.btnCreateCharacter.y = 100;
-    this.btnCreateCharacter.x = 100;
-    this.btnCreateCharacter.width = 200;
-    this.btnCreateCharacter.height = 50;
-    this.btnCreateCharacter.text = "Create Character";
-    this.btnCreateCharacter.rounding = 10;
-    this.btnCreateCharacter.borderColor = Config.buttonBorders;
-    this.btnCreateCharacter.borderWidth = 1;
-    this.btnCreateCharacter.dropShadow = true;
+    this.btnStart = new Button(this);
+    this.btnStart.textColor = Config.buttonText;
+    this.btnStart.color = Config.buttonBackground;
+    this.btnStart.y = 70;
+    this.btnStart.x = 100;
+    this.btnStart.width = 200;
+    this.btnStart.height = 50;
+    this.btnStart.text = "Start";
+    this.btnStart.rounding = 10;
+    this.btnStart.borderColor = Config.buttonBorders;
+    this.btnStart.borderWidth = 1;
+    this.btnStart.dropShadow = true;
 
     this.btnGameSelector = new Button(this);
     this.btnGameSelector.textColor = Config.buttonText;
@@ -52,33 +52,18 @@ class MainMenu extends Container {
     this.btnGameSelector.dropShadow = true;
 
     this.drawables.push(this.lblHeader);
-    this.drawables.push(this.btnCreateCharacter);
+    this.drawables.push(this.btnStart);
     this.drawables.push(this.btnGameSelector);
 
-    this.clickables.push(this.btnCreateCharacter);
+    this.clickables.push(this.btnStart);
     this.clickables.push(this.btnGameSelector);
-
-    this.characterTransition = function () {
-      var that = this;
-      var inAction = function () {
-        if (that.container.y < 510) {
-          that.container.owner.characterBuilder.y += 20;
-          that.container.owner.mainMenu.y += 20;
-          that.container.owner.fightMenu.y += 20;
-          setTimeout(inAction, 50);
-        }
-      };
-
-      setTimeout(inAction, 50);
-    };
-
-    this.btnCreateCharacter.subscribe(this.characterTransition);
 
     this.gameSelectTransition = function () {
       Loader.runningProgram = 'loader';
     };
 
     this.btnGameSelector.subscribe(this.gameSelectTransition);
+
 
   }
 }
