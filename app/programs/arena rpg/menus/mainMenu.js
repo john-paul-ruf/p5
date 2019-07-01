@@ -38,10 +38,25 @@ class MainMenu extends Container {
     this.btnCreateCharacter.borderWidth = 1;
     this.btnCreateCharacter.dropShadow = true;
 
+    this.btnGameSelector = new Button(this);
+    this.btnGameSelector.textColor = Config.buttonText;
+    this.btnGameSelector.color = Config.buttonBackground;
+    this.btnGameSelector.y = 170;
+    this.btnGameSelector.x = 100;
+    this.btnGameSelector.width = 200;
+    this.btnGameSelector.height = 50;
+    this.btnGameSelector.text = "Game Selector";
+    this.btnGameSelector.rounding = 10;
+    this.btnGameSelector.borderColor = Config.buttonBorders;
+    this.btnGameSelector.borderWidth = 1;
+    this.btnGameSelector.dropShadow = true;
+
     this.drawables.push(this.lblHeader);
     this.drawables.push(this.btnCreateCharacter);
+    this.drawables.push(this.btnGameSelector);
 
     this.clickables.push(this.btnCreateCharacter);
+    this.clickables.push(this.btnGameSelector);
 
     this.characterTransition = function () {
       var that = this;
@@ -58,6 +73,12 @@ class MainMenu extends Container {
     };
 
     this.btnCreateCharacter.subscribe(this.characterTransition);
+
+    this.gameSelectTransition = function () {
+      Loader.runningProgram = 'loader';
+    };
+
+    this.btnGameSelector.subscribe(this.gameSelectTransition);
 
   }
 }
