@@ -11,16 +11,16 @@ class Ship extends Interactive{
     const distance = current.distance(target);
 
     if (distance > 10) {
-      let direction = new Victor(target.x - current.x, target.y - current.y);
-      direction = direction.norm();
-      let angle = direction.angle() - this.forward.angle();
+      this.direction = new Victor(target.x - current.x, target.y - current.y);
+      this.direction = this.direction.norm();
+      this.angle = this.direction.angle() - this.forward.angle();
 
-      if (angle < 0) {
-        angle += Math.PI * 2;
+      if (this.angle < 0) {
+        this.angle += Math.PI * 2;
       }
 
-      if (angle > 0.1) {
-        if (angle < Math.PI) {
+      if (this.angle > 0.1) {
+        if (this.angle < Math.PI) {
           this.forward = this.forward.rotate(this.turnAngleSpeed * dt);
         } else {
           this.forward = this.forward.rotate(-this.turnAngleSpeed * dt);
@@ -64,5 +64,11 @@ class Ship extends Interactive{
     };
 
     this.subscribe(this.handleInteraction);
+    this.sprite = loadImage('app/programs/asteroids/assets/scout_1.png');
+
+  }
+
+  draw() {
+    image(this.sprite, this.x, this.y);
   }
 }
