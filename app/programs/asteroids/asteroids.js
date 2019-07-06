@@ -53,7 +53,13 @@ class Asteroids {
 
     center(this.mainMenu);
 
-    this.playerShip = new Ship();
+    this.playerShip = new Ship([
+      'app/programs/asteroids/assets/scout_1.png',
+      'app/programs/asteroids/assets/scout_2.gif',
+      'app/programs/asteroids/assets/scout_3.gif',
+      'app/programs/asteroids/assets/scout_4.gif',
+      'app/programs/asteroids/assets/scout_5.gif'
+    ]);
     this.playerShip.init();
     this.playerShip.height = 16;
     this.playerShip.width = 16;

@@ -1,7 +1,35 @@
-class Ship extends Interactive{
+class Ship extends AnimatedSprite {
 
-  constructor() {
-    super();
+  constructor(imageKeyArray) {
+    super(imageKeyArray);
+  }
+
+  init() {
+    this.targetX = this.x;
+    this.targetY = this.y;
+
+    this.turnAngleSpeed = 0.05;
+    this.turnSpeed = 0.03;
+    this.speed = 0.03;
+    this.forward = new Victor(this.width / 2, this.height / 2);
+
+    this.handleInteraction = () => {
+      this.dt = 0;
+
+      this.targetX = mouseX;
+      this.targetY = mouseY;
+
+      this.callMove = () => {
+        this.dt += 0.1;
+        this.move(this.dt);
+        setTimeout(this.callMove, 50);
+      };
+
+      setTimeout(this.callMove, 50);
+
+    };
+
+    this.subscribe(this.handleInteraction);
   }
 
   move(dt) {
@@ -36,39 +64,5 @@ class Ship extends Interactive{
 
       //this.sprite.rotation = this.forward.angle();
     }
-  }
-
-  init() {
-    this.targetX = this.x;
-    this.targetY = this.y;
-
-    this.turnAngleSpeed = 0.05;
-    this.turnSpeed = 0.03;
-    this.speed = 0.03;
-    this.forward = new Victor(this.width / 2, this.height / 2);
-
-    this.handleInteraction = () => {
-      this.dt = 0;
-
-      this.targetX = mouseX;
-      this.targetY = mouseY;
-
-      this.callMove = () => {
-        this.dt += 0.1;
-        this.move(this.dt);
-        setTimeout(this.callMove, 50);
-      };
-
-      setTimeout(this.callMove, 50);
-
-    };
-
-    this.subscribe(this.handleInteraction);
-    this.sprite = loadImage('app/programs/asteroids/assets/scout_1.png');
-
-  }
-
-  draw() {
-    image(this.sprite, this.x, this.y);
   }
 }

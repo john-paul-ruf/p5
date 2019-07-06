@@ -1,4 +1,4 @@
-class Sprite extends Drawable {
+class Sprite extends Interactive {
   constructor(imageKey) {
     super();
 
