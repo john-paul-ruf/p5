@@ -63,7 +63,7 @@ class Asteroids {
 
     // Create the stars
     this.stars = [];
-    const starAmount = 500;
+    const starAmount = 50;
     for (let i = 0; i < starAmount; i++) {
       const star = new Star([
         'app/programs/asteroids/assets/star_1.png',
