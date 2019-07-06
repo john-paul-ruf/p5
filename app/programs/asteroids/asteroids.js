@@ -65,7 +65,13 @@ class Asteroids {
     this.stars = [];
     const starAmount = 500;
     for (let i = 0; i < starAmount; i++) {
-      const star = new Sprite(this, 'app/programs/asteroids/assets/star.png');
+      const star = new AnimatedSprite([
+        'app/programs/asteroids/assets/star_1.png',
+        'app/programs/asteroids/assets/star_2.png',
+        'app/programs/asteroids/assets/star_3.png',
+        'app/programs/asteroids/assets/star_4.png',
+        'app/programs/asteroids/assets/star_5.png'        
+        ]);
       center(star);
       randomizeStar(star);
       this.stars.push(star);

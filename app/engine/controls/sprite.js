@@ -1,5 +1,5 @@
 class Sprite extends Drawable {
-  constructor(container, imageKey) {
+  constructor(imageKey) {
     super();
 
     this.sprite = loadImage(imageKey);
