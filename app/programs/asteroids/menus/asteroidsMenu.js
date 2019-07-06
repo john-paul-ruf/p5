@@ -66,7 +66,7 @@ class AsteroidsMenu extends Container {
 
     this.gameStartTransition = function () {
       this.container.visible = false;
-      this.gameInProgress = true;
+      Asteroids.gameInProgress = true;
     };
 
     this.btnStart.subscribe(this.gameStartTransition);
