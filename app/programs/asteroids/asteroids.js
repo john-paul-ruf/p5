@@ -65,7 +65,7 @@ class Asteroids {
     this.stars = [];
     const starAmount = 500;
     for (let i = 0; i < starAmount; i++) {
-      const star = new AnimatedSprite([
+      const star = new Star([
         'app/programs/asteroids/assets/star_1.png',
         'app/programs/asteroids/assets/star_2.png',
         'app/programs/asteroids/assets/star_3.png',
