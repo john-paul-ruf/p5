@@ -56,10 +56,10 @@ class Ship extends Interactive{
       this.callMove = () => {
         this.dt += 0.1;
         this.move(this.dt);
-        setTimeout(this.callMove, 100);
+        setTimeout(this.callMove, 50);
       };
 
-      setTimeout(this.callMove, 100);
+      setTimeout(this.callMove, 50);
 
     };
 

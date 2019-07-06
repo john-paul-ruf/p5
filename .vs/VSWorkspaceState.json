@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\programs",
+    "\\app\\programs\\arena rpg\\components",
+    "\\app\\programs\\asteroids",
+    "\\app\\programs\\asteroids\\gameLogic",
+    "\\app\\programs\\asteroids\\menus",
+    "\\app\\programs\\brick breaker",
+    "\\app\\programs\\flying shooter",
+    "\\styles"
+  ],
+  "SelectedNode": "\\app\\programs\\asteroids\\gameLogic\\ship.js",
+  "PreviewInSolutionExplorer": false
+}
