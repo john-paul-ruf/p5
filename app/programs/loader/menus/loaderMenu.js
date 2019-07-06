@@ -45,7 +45,7 @@ class LoaderMenu extends Container {
     this.btnAsteroids.x = 100;
     this.btnAsteroids.width = 200;
     this.btnAsteroids.height = 50;
-    this.btnAsteroids.text = "Space Trader";
+    this.btnAsteroids.text = "Asteroids";
     this.btnAsteroids.rounding = 10;
     this.btnAsteroids.borderColor = Config.buttonBorders;
     this.btnAsteroids.borderWidth = 1;
@@ -65,7 +65,7 @@ class LoaderMenu extends Container {
     this.btnArenaRPG.subscribe(this.arenaTransition);
 
     this.asteroidsTransition = function () {
-      Loader.runningProgram = 'Space Trader';
+      Loader.runningProgram = 'asteroids';
     };
 
     this.btnAsteroids.subscribe(this.asteroidsTransition);
