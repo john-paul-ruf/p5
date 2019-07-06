@@ -14,6 +14,9 @@ class Asteroids {
 
       if (Asteroids.gameInProgress) {
         this.playerShip.draw();
+        _.forEach(this.stars, s => {
+          s.draw();
+        });
       }
     }
   }
@@ -57,6 +60,21 @@ class Asteroids {
     this.playerShip.color = color(256, 256, 0);
 
     center(this.playerShip);
+
+    // Create the stars
+    this.stars = [];
+    const starAmount = 500;
+    for (let i = 0; i < starAmount; i++) {
+      const star = new Sprite(this, 'app/programs/asteroids/assets/star.png');
+      center(star);
+      randomizeStar(star);
+      this.stars.push(star);
+    }
+
+    function randomizeStar(star) {
+      star.y = Math.floor(Math.random() * Math.floor(window.innerHeight));
+      star.x = Math.floor(Math.random() * Math.floor(window.innerWidth));
+    }
   }
 }
 
