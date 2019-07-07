@@ -1,15 +1,15 @@
 class Interactive extends Drawable {
   constructor() {
     super();
-    this.clickHandlers = [];
+    this.eventHandlers = [];
   }
 
   subscribe(fn) {
-    this.clickHandlers.push(fn);
+    this.eventHandlers.push(fn);
   };
 
   unsubscribe(fn) {
-    this.clickHandlers = this.handlers.filter(
+    this.eventHandlers = this.eventHandlers.filter(
       function (item) {
         if (item !== fn) {
           return item;
@@ -19,7 +19,7 @@ class Interactive extends Drawable {
   };
 
   onClick() {
-    this.clickHandlers.forEach((item) => {
+    this.eventHandlers.forEach((item) => {
         item.call(this);
     });
   };

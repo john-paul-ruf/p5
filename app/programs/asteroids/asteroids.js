@@ -66,6 +66,8 @@ class Asteroids {
     this.playerShip.color = color(256, 256, 0);
 
     center(this.playerShip);
+    this.playerShip.targetX = this.playerShip.x;
+    this.playerShip.targetY = this.playerShip.y;
 
     // Create the stars
     this.stars = [];
