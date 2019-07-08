@@ -6,11 +6,10 @@ class Clickable extends Drawable {
 
   clicked() {
 
-    let x = mouseX - (-width / 2, -height / 2);
-    let y = mouseY - (-height / 2, -height / 2);
+    const canvasCoord = MathHelper.projectCanvasToWorld(window.easyCamera.getCanvas(), createVector(mouseX, mouseY, 0));
 
-    if (x > this.relativeX && x < this.relativeX + this.width
-      && y > this.relativeY && y < this.relativeY + this.height) {
+    if (canvasCoord.x > this.relativeX && canvasCoord.x < this.relativeX + this.width
+      && canvasCoord.y > this.relativeY && canvasCoord.y < this.relativeY + this.height) {
       return true;
     }
     return false;

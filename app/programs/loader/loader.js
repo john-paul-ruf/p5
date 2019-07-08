@@ -5,6 +5,7 @@ class Loader {
 
   setup() {
     this.canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
+    window.easyCamera.setCanvas(this.canvas);
   }
 
   draw() {

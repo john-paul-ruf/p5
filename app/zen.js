@@ -1,6 +1,7 @@
 this.loader = new Loader();
 this.arenaRPG = new ArenaRPG();
 this.asteroids = new Asteroids();
+window.easyCamera;
 
 let engineFont;
 function preload() {
@@ -8,7 +9,8 @@ function preload() {
 }
 
 function setup() {
-  
+  window.easyCamera = createEasyCam();
+
   this.loader.init();
   this.loader.setup();
 
@@ -17,8 +19,6 @@ function setup() {
 
   this.asteroids.init();
   this.asteroids.setup();
-
-  camera(window.innerWidth / 2, window.innerHeight / 2, 900, window.innerWidth / 2, window.innerHeight / 2, 0, 0, 1, 0);
 }
 
 function draw() {
