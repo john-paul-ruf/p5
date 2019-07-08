@@ -17,6 +17,8 @@ function setup() {
 
   this.asteroids.init();
   this.asteroids.setup();
+
+  camera(window.innerWidth / 2, window.innerHeight / 2, 900, window.innerWidth / 2, window.innerHeight / 2, 0, 0, 1, 0);
 }
 
 function draw() {
