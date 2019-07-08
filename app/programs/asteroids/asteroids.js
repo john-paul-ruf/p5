@@ -4,7 +4,7 @@ class Asteroids {
   }
 
   setup() {
-    this.canvas = createCanvas(window.innerWidth, window.innerHeight);
+    this.canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
   }
 
   draw() {
@@ -44,15 +44,6 @@ class Asteroids {
     this.mainMenu = new AsteroidsMenu(this);
     this.mainMenu.init();
 
-    var center = function (obj) {
-      const x = (innerWidth - obj.width) / 2;
-      const y = (innerHeight - obj.height) / 2;
-      obj.x = x;
-      obj.y = y;
-    };
-
-    center(this.mainMenu);
-
     this.playerShip = new Ship([
       'app/programs/asteroids/assets/scout_1.png',
       'app/programs/asteroids/assets/scout_2.gif',
@@ -65,7 +56,6 @@ class Asteroids {
     this.playerShip.width = 16;
     this.playerShip.color = color(256, 256, 0);
 
-    center(this.playerShip);
     this.playerShip.targetX = this.playerShip.x;
     this.playerShip.targetY = this.playerShip.y;
 
@@ -80,7 +70,6 @@ class Asteroids {
         'app/programs/asteroids/assets/star_4.png',
         'app/programs/asteroids/assets/star_5.png'        
         ]);
-      center(star);
       randomizeStar(star);
       this.stars.push(star);
     }
