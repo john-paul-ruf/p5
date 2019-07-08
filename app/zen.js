@@ -10,18 +10,11 @@ function preload() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  window.easycam.setViewport([0, 0, windowWidth, windowHeight]);
+  window.cam.setViewport([0, 0, windowWidth, windowHeight]);
 }
 function setup() {
   pixelDensity(1);
   setAttributes('antialias', true);
-
-  // define initial state
-  var state = {
-    distance: 200
-  };
-
-  window.easyCam = createEasyCam(state);
 
   this.loader.init();
   this.loader.setup();

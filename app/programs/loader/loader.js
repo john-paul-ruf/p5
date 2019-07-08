@@ -5,13 +5,13 @@ class Loader {
 
   setup() {
     this.canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
-    window.easyCam.setCanvas(this.canvas);
+    window.cam = createCamera();
+    window.cam.canvas = this.canvas;
   }
 
   draw() {
     if (Loader.runningProgram === 'loader') {
       background(128);
-      window.easyCam.setCenter({ x: this.mainMenu.width / 2, y: this.mainMenu.height / 2, z: 0 });
       this.mainMenu.draw();
     }
   }

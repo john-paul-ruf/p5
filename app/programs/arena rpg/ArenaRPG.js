@@ -5,7 +5,8 @@ class ArenaRPG {
 
   setup() {
     this.canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
-    window.easyCam.setCanvas(this.canvas);
+    window.cam = createCamera();
+    window.cam.canvas = this.canvas;
   }
 
   draw() {
