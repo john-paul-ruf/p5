@@ -24,17 +24,17 @@ class Ship extends AnimatedSprite {
   }
 
   move() {
-    if (!this.drawing) {
-      const target = new Victor(this.targetX, this.targetY);
-      const current = new Victor(this.x, this.y);
-      const distance = current.distance(target);
+    //if (!this.drawing) {
+    //  const target = new Victor(this.targetX, this.targetY);
+    //  const current = new Victor(this.x, this.y);
+    //  const distance = current.distance(target);
 
-      if (distance > 5) {
-        this.direction = MathHelper.direction(target.subtract(current));
-        this.x += (this.direction.x * this.speed);
-        this.y += (this.direction.y * this.speed);
-      }
-    }
+    //  if (distance > 5) {
+    //    this.direction = MathHelper.direction(target.subtract(current));
+    //    this.x += (this.direction.x * this.speed);
+    //    this.y += (this.direction.y * this.speed);
+    //  }
+    //}
   }
 
   draw() {
@@ -42,9 +42,27 @@ class Ship extends AnimatedSprite {
     if (this.direction) {
       this.drawing = true;
       push();
-      imageMode(CENTER);
-      //rotate(90);
-      super.draw();
+      translate(this.x + 16, this.y + 16);
+      angleMode(DEGREES);
+      rotate(90);
+      if (this.visible) {
+        image(this.sprite, this.x, this.y);
+
+        this.ticker++;
+        if (this.ticker > 100) {
+          this.ticker = 0;
+        }
+
+        if (this.ticker % this.animationSpeed === 0) {
+          this.imageIndex++;
+
+          if (this.imageIndex >= this.imageKeys.length) {
+            this.imageIndex = 0;
+          }
+
+          this.sprite = this.sprites[this.imageIndex];
+        }
+      }
       pop();
       this.drawing = false;
     }
