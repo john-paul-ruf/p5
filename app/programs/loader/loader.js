@@ -4,7 +4,7 @@ class Loader {
   }
 
   setup() {
-    this.canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
+    this.canvas = createCanvas(window.innerWidth, window.innerHeight);
   }
 
   draw() {
@@ -32,6 +32,15 @@ class Loader {
 
     this.mainMenu = new LoaderMenu(this);
     this.mainMenu.init();
+
+    var center = function (obj) {
+      const x = (innerWidth - obj.width) / 2;
+      const y = (innerHeight - obj.height) / 2;
+      obj.x = x;
+    };
+
+    center(this.mainMenu);
+
   }
 }
 

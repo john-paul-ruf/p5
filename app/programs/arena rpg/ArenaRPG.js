@@ -4,7 +4,7 @@ class ArenaRPG {
   }
 
   setup() {
-    this.canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
+    this.canvas = createCanvas(window.innerWidth, window.innerHeight);
   }
 
   draw() {
@@ -53,6 +53,16 @@ class ArenaRPG {
 
     this.fightMenu = new FightMenu(this);
     this.fightMenu.init();
+
+    var center = function (obj) {
+      const x = (innerWidth - obj.width) / 2;
+      const y = (innerHeight - obj.height) / 2;
+      obj.x = x;
+    };
+
+    center(this.mainMenu);
+    center(this.characterBuilder);
+    center(this.fightMenu);
 
   }
 }
