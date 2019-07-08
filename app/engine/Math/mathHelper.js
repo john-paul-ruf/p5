@@ -39,7 +39,7 @@ MathHelper.projectWorldToCanvas = (canvas, vWorld) => {
   var mvp = (canvas.uMVMatrix.copy()).mult(canvas.uPMatrix);
 
   // Transform the vector to Normalized Device Coordinate.
-  var vNDC = MathHelper.multMatrixVector(mvp, vWorld);
+  var vNDC = MathHelper.multMatrixVector(mvp, vWorld).normalize();
 
   // Transform vector from NDC to Canvas coordinates.
   var vCanvas = createVector();

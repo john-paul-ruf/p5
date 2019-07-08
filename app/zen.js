@@ -8,8 +8,20 @@ function preload() {
   engineFont = loadFont('app/engine/assets/Pixel-Miners.otf');
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  window.easycam.setViewport([0, 0, windowWidth, windowHeight]);
+}
 function setup() {
-  window.easyCamera = createEasyCam();
+  pixelDensity(1);
+  setAttributes('antialias', true);
+
+  // define initial state
+  var state = {
+    distance: 200
+  };
+
+  window.easyCam = createEasyCam(state);
 
   this.loader.init();
   this.loader.setup();

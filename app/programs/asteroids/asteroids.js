@@ -5,7 +5,7 @@ class Asteroids {
 
   setup() {
     this.canvas = createCanvas(window.innerWidth, window.innerHeight, WEBGL);
-    window.easyCamera.setCanvas(this.canvas);
+    window.easyCam.setCanvas(this.canvas);
   }
 
   draw() {
