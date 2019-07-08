@@ -5,12 +5,8 @@ class Clickable extends Drawable {
   }
 
   clicked() {
-
-    let x = mouseX - (-width / 2, -height / 2);
-    let y = mouseY - (-height / 2, -height / 2);
-
-    if (x > this.relativeX && x < this.relativeX + this.width
-      && y > this.relativeY && y < this.relativeY + this.height) {
+    if (mouseX > this.relativeX && mouseX < this.relativeX + this.width
+      && mouseY > this.relativeY && mouseY < this.relativeY + this.height) {
       return true;
     }
     return false;
